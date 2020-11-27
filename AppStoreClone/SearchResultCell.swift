@@ -59,6 +59,10 @@ final class SearchResultCell: UICollectionViewCell {
         return button
     }()
     
+    lazy var screenshot1 = makeScreenshotView()
+    lazy var screenshot2 = makeScreenshotView()
+    lazy var screenshot3 = makeScreenshotView()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
                 
@@ -77,13 +81,33 @@ final class SearchResultCell: UICollectionViewCell {
         ])
         labelsStackView.axis = .vertical
         
-        let stackView = UIStackView(arrangedSubviews: [
+        let infoStackView = UIStackView(arrangedSubviews: [
             appIconImageView, labelsStackView, getButton
         ])
-        stackView.spacing = 12
-        stackView.alignment = .center
+        infoStackView.spacing = 12
+        infoStackView.alignment = .center
         
-        addSubview(stackView)
-        stackView.fillSuperview(padding: .init(top: 0, left: 16, bottom: 0, right: 16))
+        let screenshotsStackView = UIStackView(arrangedSubviews: [
+            screenshot1, screenshot2, screenshot3
+        ])
+        screenshotsStackView.spacing = 12
+        screenshotsStackView.distribution = .fillEqually
+        
+        let cellStackView = UIStackView(arrangedSubviews: [
+            infoStackView, screenshotsStackView
+        ])
+        cellStackView.axis = .vertical
+        cellStackView.spacing = 16
+        
+        addSubview(cellStackView)
+        cellStackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 0, right: 16))
+    }
+    
+    private func makeScreenshotView() -> UIImageView {
+        let imageView = UIImageView()
+        
+        imageView.backgroundColor = .blue
+        
+        return imageView
     }
 }
