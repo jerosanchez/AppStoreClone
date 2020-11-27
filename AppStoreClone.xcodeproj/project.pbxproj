@@ -21,6 +21,7 @@
 		CADF72C9257117D300FD74C4 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF72C8257117D300FD74C4 /* VerticalStackView.swift */; };
 		CAFABF7E25717E5F0076A26C /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFABF7D25717E5F0076A26C /* AppsGroupCell.swift */; };
 		CAFABF812571828D0076A26C /* UILabel+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFABF802571828D0076A26C /* UILabel+Helpers.swift */; };
+		CAFABF842571848A0076A26C /* AppsGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFABF832571848A0076A26C /* AppsGroupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		CADF72C8257117D300FD74C4 /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		CAFABF7D25717E5F0076A26C /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
 		CAFABF802571828D0076A26C /* UILabel+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Helpers.swift"; sourceTree = "<group>"; };
+		CAFABF832571848A0076A26C /* AppsGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			children = (
 				CADF72BF257105D700FD74C4 /* AppsViewController.swift */,
 				CAFABF7D25717E5F0076A26C /* AppsGroupCell.swift */,
+				CAFABF832571848A0076A26C /* AppsGroupViewController.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				CABD825C25713534004D8396 /* SearchService.swift in Sources */,
 				CADF72C9257117D300FD74C4 /* VerticalStackView.swift in Sources */,
 				CADF72C625710FEA00FD74C4 /* UIView+LayoutHelpers.swift in Sources */,
+				CAFABF842571848A0076A26C /* AppsGroupViewController.swift in Sources */,
 				CADF729E2570F95300FD74C4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
