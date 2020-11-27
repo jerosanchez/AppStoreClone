@@ -54,6 +54,7 @@ final class SearchResultCell: UICollectionViewCell {
         button.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
         button.backgroundColor = UIColor(white: 0.95, alpha: 1)
         button.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        button.layer.cornerRadius = 12
 
         return button
     }()
