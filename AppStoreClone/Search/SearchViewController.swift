@@ -17,6 +17,7 @@ final class SearchViewController: UICollectionViewController {
         super.viewDidLoad()
         
         setup()
+        fetchData()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,6 +42,19 @@ final class SearchViewController: UICollectionViewController {
     
     private func registerCells() {
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: SearchResultCell.cellId)
+    }
+    
+    private func fetchData() {
+        guard let url = URL(string: "https://itunes.apple.com/search?term=instagram&entity=software") else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard error == nil, let data = data else { return }
+            
+            guard let searchResult = try? JSONDecoder().decode(SearchResult.self, from: data) else { return }
+            
+            searchResult.results.forEach { print($0) }
+            
+        }.resume()
     }
 }
 
