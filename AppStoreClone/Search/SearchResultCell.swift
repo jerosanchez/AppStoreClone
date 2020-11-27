@@ -73,6 +73,12 @@ final class SearchResultCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configure(name: String, category: String, ratings: String) {
+        nameLabel.text = name
+        categoryLabel.text = category
+        ratingsLabel.text = ratings
+    }
+    
     // MARK: - Helpers
     
     private func setupLayout() {
