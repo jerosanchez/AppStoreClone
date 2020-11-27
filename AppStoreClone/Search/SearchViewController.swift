@@ -22,7 +22,6 @@ final class SearchViewController: UICollectionViewController {
         super.viewDidLoad()
         
         setup()
-        fetchData()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -52,28 +51,12 @@ final class SearchViewController: UICollectionViewController {
         collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: SearchResultCell.cellId)
     }
     
-    private func fetchData() {
-        service.load { [weak self] result in
-            guard let self = self else { return }
-
-            switch result {
-            case let .success(results):
-                self.searchResults = results
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-                
-            case let .failure(error):
-                print("Load failed: \(error)")
-            }
-        }
-    }
-    
     private func setupSearchBar() {
         navigationItem.searchController = self.searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         
         searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
     }
 }
 
@@ -85,6 +68,23 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        service.load(searchTerm: searchText) { [weak self] result in
+            guard let self = self else { return }
+
+            self.handleServiceResult(result)
+        }
+    }
+    
+    private func handleServiceResult(_ result: SearchService.LoadResult) {
+        switch result {
+        case let .success(results):
+            self.searchResults = results
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+            
+        case let .failure(error):
+            print("Load failed: \(error)")
+        }
     }
 }

@@ -81,7 +81,7 @@ final class SearchResultCell: UICollectionViewCell {
         categoryLabel.text = model.primaryGenreName
         
         let rating = String(format: "%0.1f", model.averageUserRating ?? 0.0)
-        ratingsLabel.text = rating
+        ratingsLabel.text = "Rating: \(rating)"
         
         appIconImageView.sd_setImage(with: URL(string: model.artworkUrl100))
         

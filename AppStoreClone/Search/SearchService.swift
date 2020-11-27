@@ -19,8 +19,8 @@ final class SearchService {
         case invalidaData
     }
     
-    func load(completion: @escaping (LoadResult) -> Void) {
-        guard let url = URL(string: "https://itunes.apple.com/search?term=instagram&entity=software") else { return }
+    func load(searchTerm: String, completion: @escaping (LoadResult) -> Void) {
+        guard let url = URL(string: "https://itunes.apple.com/search?term=\(searchTerm)&entity=software") else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard error == nil, let data = data else {
