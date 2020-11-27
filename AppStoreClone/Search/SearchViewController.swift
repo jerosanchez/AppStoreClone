@@ -9,7 +9,7 @@ import UIKit
 
 final class SearchViewController: UICollectionViewController {
     
-    private let viewModel = SearchViewModel()
+    private let service = SearchService()
     private var searchResults = [SearchResultItem]()
     
     convenience init() {
@@ -49,7 +49,7 @@ final class SearchViewController: UICollectionViewController {
     }
     
     private func fetchData() {
-        viewModel.load { [weak self] result in
+        service.load { [weak self] result in
             guard let self = self else { return }
 
             switch result {

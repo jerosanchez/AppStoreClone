@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class SearchViewModel {
+final class SearchService {
     
     enum LoadResult {
         case success([SearchResultItem])
