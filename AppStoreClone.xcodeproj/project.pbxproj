@@ -10,6 +10,9 @@
 		CADF729E2570F95300FD74C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF729D2570F95300FD74C4 /* AppDelegate.swift */; };
 		CADF72A42570F95400FD74C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CADF72A32570F95400FD74C4 /* Assets.xcassets */; };
 		CADF72B72570FC6300FD74C4 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF72B62570FC6300FD74C4 /* BaseTabBarController.swift */; };
+		CADF72BA2571044000FD74C4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF72B92571044000FD74C4 /* SearchViewController.swift */; };
+		CADF72BD257105A700FD74C4 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF72BC257105A700FD74C4 /* TodayViewController.swift */; };
+		CADF72C0257105D700FD74C4 /* AppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF72BF257105D700FD74C4 /* AppsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +21,9 @@
 		CADF72A32570F95400FD74C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CADF72AB2570F95400FD74C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CADF72B62570FC6300FD74C4 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		CADF72B92571044000FD74C4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		CADF72BC257105A700FD74C4 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		CADF72BF257105D700FD74C4 /* AppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,9 @@
 			children = (
 				CADF729D2570F95300FD74C4 /* AppDelegate.swift */,
 				CADF72B62570FC6300FD74C4 /* BaseTabBarController.swift */,
+				CADF72BC257105A700FD74C4 /* TodayViewController.swift */,
+				CADF72BF257105D700FD74C4 /* AppsViewController.swift */,
+				CADF72B92571044000FD74C4 /* SearchViewController.swift */,
 				CADF72A32570F95400FD74C4 /* Assets.xcassets */,
 				CADF72AB2570F95400FD74C4 /* Info.plist */,
 			);
@@ -126,6 +135,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CADF72BD257105A700FD74C4 /* TodayViewController.swift in Sources */,
+				CADF72C0257105D700FD74C4 /* AppsViewController.swift in Sources */,
+				CADF72BA2571044000FD74C4 /* SearchViewController.swift in Sources */,
 				CADF72B72570FC6300FD74C4 /* BaseTabBarController.swift in Sources */,
 				CADF729E2570F95300FD74C4 /* AppDelegate.swift in Sources */,
 			);
