@@ -31,8 +31,7 @@ final class SearchViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultCell.cellId, for: indexPath) as! SearchResultCell
         
         let result = searchResults[indexPath.item]
-        let rating = String(format: "%0.1f", result.averageUserRating ?? 0.0)
-        cell.configure(name: result.trackName, category: result.primaryGenreName, ratings: "Rating: \(rating)")
+        cell.configure(with: result)
         
         return cell
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class SearchResultCell: UICollectionViewCell {
     
@@ -73,10 +74,26 @@ final class SearchResultCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(name: String, category: String, ratings: String) {
-        nameLabel.text = name
-        categoryLabel.text = category
-        ratingsLabel.text = ratings
+    func configure(with model: SearchResultItem) {
+        nameLabel.text = model.trackName
+        
+        categoryLabel.text = model.primaryGenreName
+        
+        let rating = String(format: "%0.1f", model.averageUserRating ?? 0.0)
+        ratingsLabel.text = rating
+        
+        appIconImageView.sd_setImage(with: URL(string: model.artworkUrl100))
+        
+        let screentshotCount = model.screenshotUrls.count
+        if screentshotCount > 0 {
+            screenshot1.sd_setImage(with: URL(string: model.screenshotUrls[0]))
+        }
+        if screentshotCount > 1 {
+            screenshot2.sd_setImage(with: URL(string: model.screenshotUrls[1]))
+        }
+        if screentshotCount > 2 {
+            screenshot3.sd_setImage(with: URL(string: model.screenshotUrls[2]))
+        }
     }
     
     // MARK: - Helpers
