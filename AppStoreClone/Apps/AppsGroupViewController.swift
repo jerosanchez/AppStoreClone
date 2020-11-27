@@ -32,12 +32,35 @@ class AppsGroupViewController: UICollectionViewController {
     // MARK: - Helpers
     
     private func setup() {
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .blue
 
+        if let layout = collectionViewLayout as? UICollectionViewFlowLayout{
+            layout.scrollDirection = .horizontal
+        }
+        
         registerCells()
     }
     
     private func registerCells() {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+    }
+}
+
+extension AppsGroupViewController: UICollectionViewDelegateFlowLayout {
+    
+    private var lineSpacing: CGFloat { return 10 }
+    private var topBottomPadding: CGFloat { return 12 }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let height = (view.frame.height - 2 * lineSpacing - 2 * topBottomPadding) / 3
+        return .init(width: view.frame.width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: topBottomPadding, left: 16, bottom: topBottomPadding, right: 16)
     }
 }
