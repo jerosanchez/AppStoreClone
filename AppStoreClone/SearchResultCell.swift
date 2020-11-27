@@ -76,10 +76,9 @@ final class SearchResultCell: UICollectionViewCell {
     // MARK: - Helpers
     
     private func setupLayout() {
-        let labelsStackView = UIStackView(arrangedSubviews: [
+        let labelsStackView = VerticalStackView(arrangedSubviews: [
             nameLabel, categoryLabel, ratingsLabel
         ])
-        labelsStackView.axis = .vertical
         
         let infoStackView = UIStackView(arrangedSubviews: [
             appIconImageView, labelsStackView, getButton
@@ -93,11 +92,9 @@ final class SearchResultCell: UICollectionViewCell {
         screenshotsStackView.spacing = 12
         screenshotsStackView.distribution = .fillEqually
         
-        let cellStackView = UIStackView(arrangedSubviews: [
+        let cellStackView = VerticalStackView(arrangedSubviews: [
             infoStackView, screenshotsStackView
-        ])
-        cellStackView.axis = .vertical
-        cellStackView.spacing = 16
+        ], spacing: 16)
         
         addSubview(cellStackView)
         cellStackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 0, right: 16))
