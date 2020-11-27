@@ -11,7 +11,7 @@ final class SearchResultCell: UICollectionViewCell {
     
     static var cellId: String { return SearchResultCell.description() }
     
-    let appIconImageView: UIImageView = {
+    private let appIconImageView: UIImageView = {
         let imageView = UIImageView()
         
         imageView.backgroundColor = .red
@@ -22,7 +22,7 @@ final class SearchResultCell: UICollectionViewCell {
         return imageView
     }()
     
-    let nameLabel: UILabel = {
+    private let nameLabel: UILabel = {
         let label = UILabel()
         
         label.text = "APP NAME"
@@ -30,7 +30,7 @@ final class SearchResultCell: UICollectionViewCell {
         return label
     }()
     
-    let categoryLabel: UILabel = {
+    private let categoryLabel: UILabel = {
         let label = UILabel()
         
         label.text = "Photos & Video"
@@ -38,7 +38,7 @@ final class SearchResultCell: UICollectionViewCell {
         return label
     }()
 
-    let ratingsLabel: UILabel = {
+    private let ratingsLabel: UILabel = {
         let label = UILabel()
         
         label.text = "9.2M"
@@ -46,7 +46,7 @@ final class SearchResultCell: UICollectionViewCell {
         return label
     }()
     
-    let getButton: UIButton = {
+    private let getButton: UIButton = {
         let button = UIButton(type: .system)
         
         button.setTitle("GET", for: .normal)
@@ -59,9 +59,9 @@ final class SearchResultCell: UICollectionViewCell {
         return button
     }()
     
-    lazy var screenshot1 = makeScreenshotView()
-    lazy var screenshot2 = makeScreenshotView()
-    lazy var screenshot3 = makeScreenshotView()
+    private lazy var screenshot1 = makeScreenshotView()
+    private lazy var screenshot2 = makeScreenshotView()
+    private lazy var screenshot3 = makeScreenshotView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
