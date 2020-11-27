@@ -11,14 +11,7 @@ class AppsGroupsCell: UICollectionViewCell {
 
     static var cellId: String { return AppsGroupsCell.description() }
     
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        
-        label.text = "App Section"
-        label.font = .systemFont(ofSize: 30, weight: .bold)
-        
-        return label
-    }()
+    let titleLabel = UILabel(text: "App Section", font: .systemFont(ofSize: 30, weight: .bold))
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -17,12 +17,8 @@ final class SearchViewController: UICollectionViewController {
     private var throttlingTimer: Timer?
     
     private let emptyStateLabel: UILabel = {
-        let label = UILabel()
-        
-        label.text = "Please, enter you search term above..."
+        let label = UILabel(text: "Please, enter you search term above...", font: .systemFont(ofSize: 20, weight: .bold))
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 20, weight: .bold)
-        
         return label
     }()
     

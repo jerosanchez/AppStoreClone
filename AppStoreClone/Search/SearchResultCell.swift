@@ -23,29 +23,11 @@ final class SearchResultCell: UICollectionViewCell {
         return imageView
     }()
     
-    private let nameLabel: UILabel = {
-        let label = UILabel()
-        
-        label.text = "APP NAME"
-        
-        return label
-    }()
+    private let nameLabel = UILabel(text: "APP NAME")
     
-    private let categoryLabel: UILabel = {
-        let label = UILabel()
-        
-        label.text = "Photos & Video"
-        
-        return label
-    }()
+    private let categoryLabel = UILabel(text: "Photos & Video")
 
-    private let ratingsLabel: UILabel = {
-        let label = UILabel()
-        
-        label.text = "9.2M"
-        
-        return label
-    }()
+    private let ratingsLabel = UILabel(text: "9.2M")
     
     private let getButton: UIButton = {
         let button = UIButton(type: .system)
