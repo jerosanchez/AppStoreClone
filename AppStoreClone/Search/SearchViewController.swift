@@ -14,6 +14,8 @@ final class SearchViewController: UICollectionViewController {
     
     private let searchController = UISearchController()
     
+    private var throttlingTimer: Timer?
+    
     convenience init() {
         self.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -68,10 +70,17 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        service.load(searchTerm: searchText) { [weak self] result in
+        
+        throttlingTimer?.invalidate()
+        
+        throttlingTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [weak self] _ in
             guard let self = self else { return }
+            
+            self.service.load(searchTerm: searchText) { [weak self] result in
+                guard let self = self else { return }
 
-            self.handleServiceResult(result)
+                self.handleServiceResult(result)
+            }
         }
     }
     
