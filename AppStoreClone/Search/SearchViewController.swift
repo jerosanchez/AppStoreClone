@@ -16,6 +16,16 @@ final class SearchViewController: UICollectionViewController {
     
     private var throttlingTimer: Timer?
     
+    private let emptyStateLabel: UILabel = {
+        let label = UILabel()
+        
+        label.text = "Please, enter you search term above..."
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+        
+        return label
+    }()
+    
     convenience init() {
         self.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -27,7 +37,11 @@ final class SearchViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return searchResults.count
+        let count = searchResults.count
+        
+        emptyStateLabel.isHidden = count > 0
+        
+        return count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -47,6 +61,7 @@ final class SearchViewController: UICollectionViewController {
         registerCells()
         
         setupSearchBar()
+        setupLayout()
     }
     
     private func registerCells() {
@@ -59,6 +74,11 @@ final class SearchViewController: UICollectionViewController {
         
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
+    }
+    
+    private func setupLayout() {
+        view.addSubview(emptyStateLabel)
+        emptyStateLabel.fillSuperview()
     }
 }
 
@@ -79,12 +99,12 @@ extension SearchViewController: UISearchBarDelegate {
             self.service.load(searchTerm: searchText) { [weak self] result in
                 guard let self = self else { return }
 
-                self.handleServiceResult(result)
+                self.handleResult(result)
             }
         }
     }
     
-    private func handleServiceResult(_ result: SearchService.LoadResult) {
+    private func handleResult(_ result: SearchService.LoadResult) {
         switch result {
         case let .success(results):
             self.searchResults = results
