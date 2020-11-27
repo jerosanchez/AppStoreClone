@@ -8,22 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		CADF729E2570F95300FD74C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF729D2570F95300FD74C4 /* AppDelegate.swift */; };
-		CADF72A02570F95300FD74C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF729F2570F95300FD74C4 /* SceneDelegate.swift */; };
-		CADF72A22570F95300FD74C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF72A12570F95300FD74C4 /* ContentView.swift */; };
 		CADF72A42570F95400FD74C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CADF72A32570F95400FD74C4 /* Assets.xcassets */; };
-		CADF72A72570F95400FD74C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CADF72A62570F95400FD74C4 /* Preview Assets.xcassets */; };
-		CADF72AA2570F95400FD74C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CADF72A82570F95400FD74C4 /* LaunchScreen.storyboard */; };
+		CADF72B72570FC6300FD74C4 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF72B62570FC6300FD74C4 /* BaseTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CADF729A2570F95300FD74C4 /* AppStoreClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADF729D2570F95300FD74C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CADF729F2570F95300FD74C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CADF72A12570F95300FD74C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CADF72A32570F95400FD74C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CADF72A62570F95400FD74C4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CADF72A92570F95400FD74C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CADF72AB2570F95400FD74C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CADF72B62570FC6300FD74C4 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,22 +51,11 @@
 			isa = PBXGroup;
 			children = (
 				CADF729D2570F95300FD74C4 /* AppDelegate.swift */,
-				CADF729F2570F95300FD74C4 /* SceneDelegate.swift */,
-				CADF72A12570F95300FD74C4 /* ContentView.swift */,
+				CADF72B62570FC6300FD74C4 /* BaseTabBarController.swift */,
 				CADF72A32570F95400FD74C4 /* Assets.xcassets */,
-				CADF72A82570F95400FD74C4 /* LaunchScreen.storyboard */,
 				CADF72AB2570F95400FD74C4 /* Info.plist */,
-				CADF72A52570F95400FD74C4 /* Preview Content */,
 			);
 			path = AppStoreClone;
-			sourceTree = "<group>";
-		};
-		CADF72A52570F95400FD74C4 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				CADF72A62570F95400FD74C4 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,8 +115,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CADF72AA2570F95400FD74C4 /* LaunchScreen.storyboard in Resources */,
-				CADF72A72570F95400FD74C4 /* Preview Assets.xcassets in Resources */,
 				CADF72A42570F95400FD74C4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,24 +126,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CADF72B72570FC6300FD74C4 /* BaseTabBarController.swift in Sources */,
 				CADF729E2570F95300FD74C4 /* AppDelegate.swift in Sources */,
-				CADF72A02570F95300FD74C4 /* SceneDelegate.swift in Sources */,
-				CADF72A22570F95300FD74C4 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		CADF72A82570F95400FD74C4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CADF72A92570F95400FD74C4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CADF72AC2570F95400FD74C4 /* Debug */ = {
@@ -287,7 +256,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"AppStoreClone/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 88SJ4NQHB9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AppStoreClone/Info.plist;
@@ -308,7 +277,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"AppStoreClone/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 88SJ4NQHB9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = AppStoreClone/Info.plist;
