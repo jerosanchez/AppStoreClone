@@ -50,12 +50,18 @@ final class SearchViewController: UICollectionViewController {
     }
     
     private func fetchData() {
-        viewModel.load { [weak self] results in
+        viewModel.load { [weak self] result in
             guard let self = self else { return }
 
-            self.searchResults = results
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
+            switch result {
+            case let .success(results):
+                self.searchResults = results
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+                
+            case let .failure(error):
+                print("Load failed: \(error)")
             }
         }
     }

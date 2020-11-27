@@ -66,7 +66,7 @@
 		CADF729C2570F95300FD74C4 /* AppStoreClone */ = {
 			isa = PBXGroup;
 			children = (
-				CADF72CB257119BB00FD74C4 /* Boostrap */,
+				CADF72CB257119BB00FD74C4 /* Bootstrap */,
 				CADF72CC257119D000FD74C4 /* Root */,
 				CADF72CE257119ED00FD74C4 /* Today */,
 				CADF72CF257119F600FD74C4 /* Apps */,
@@ -78,12 +78,12 @@
 			path = AppStoreClone;
 			sourceTree = "<group>";
 		};
-		CADF72CB257119BB00FD74C4 /* Boostrap */ = {
+		CADF72CB257119BB00FD74C4 /* Bootstrap */ = {
 			isa = PBXGroup;
 			children = (
 				CADF729D2570F95300FD74C4 /* AppDelegate.swift */,
 			);
-			path = Boostrap;
+			path = Bootstrap;
 			sourceTree = "<group>";
 		};
 		CADF72CC257119D000FD74C4 /* Root */ = {
