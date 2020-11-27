@@ -19,6 +19,7 @@ final class SearchResultCell: UICollectionViewCell {
         imageView.widthAnchor.constraint(equalToConstant: 64).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 64).isActive = true
         imageView.layer.cornerRadius = 12
+        imageView.clipsToBounds = true
 
         return imageView
     }()
@@ -127,6 +128,11 @@ final class SearchResultCell: UICollectionViewCell {
         let imageView = UIImageView()
         
         imageView.backgroundColor = .blue
+        imageView.layer.cornerRadius = 12
+        imageView.clipsToBounds = true
+        imageView.layer.borderWidth = 0.5
+        imageView.layer.borderColor = UIColor.init(white: 0.75, alpha: 1).cgColor
+        imageView.contentMode = .scaleAspectFill
         
         return imageView
     }

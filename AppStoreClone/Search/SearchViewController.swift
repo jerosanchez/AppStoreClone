@@ -12,6 +12,8 @@ final class SearchViewController: UICollectionViewController {
     private let service = SearchService()
     private var searchResults = [SearchResultItem]()
     
+    private let searchController = UISearchController()
+    
     convenience init() {
         self.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -42,6 +44,8 @@ final class SearchViewController: UICollectionViewController {
         collectionView.backgroundColor = .white
 
         registerCells()
+        
+        setupSearchBar()
     }
     
     private func registerCells() {
@@ -64,10 +68,23 @@ final class SearchViewController: UICollectionViewController {
             }
         }
     }
+    
+    private func setupSearchBar() {
+        navigationItem.searchController = self.searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
+        searchController.searchBar.delegate = self
+    }
 }
 
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width, height: 350)
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
     }
 }
