@@ -61,6 +61,16 @@ final class SearchResultCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
                 
+        setupLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Helpers
+    
+    private func setupLayout() {
         let labelsStackView = UIStackView(arrangedSubviews: [
             nameLabel, categoryLabel, ratingsLabel
         ])
@@ -81,9 +91,5 @@ final class SearchResultCell: UICollectionViewCell {
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
         ])
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
