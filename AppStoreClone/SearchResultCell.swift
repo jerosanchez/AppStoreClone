@@ -84,13 +84,6 @@ final class SearchResultCell: UICollectionViewCell {
         stackView.alignment = .center
         
         addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
-        ])
+        stackView.fillSuperview(padding: .init(top: 0, left: 16, bottom: 0, right: 16))
     }
 }
