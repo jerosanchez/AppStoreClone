@@ -20,4 +20,25 @@ extension UIView {
             self.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -padding.right),
         ])
     }
+    
+    func anchor(top: NSLayoutAnchor<NSLayoutYAxisAnchor>?, leading: NSLayoutAnchor<NSLayoutXAxisAnchor>?, bottom: NSLayoutAnchor<NSLayoutYAxisAnchor>?, trailing: NSLayoutAnchor<NSLayoutXAxisAnchor>?) {
+
+        translatesAutoresizingMaskIntoConstraints = false
+
+        if let top = top {
+            topAnchor.constraint(equalTo: top).isActive = true
+        }
+        
+        if let leading = leading {
+            leadingAnchor.constraint(equalTo: leading).isActive = true
+        }
+
+        if let bottom = bottom {
+            bottomAnchor.constraint(equalTo: bottom).isActive = true
+        }
+
+        if let trailing = trailing {
+            trailingAnchor.constraint(equalTo: trailing).isActive = true
+        }
+    }
 }

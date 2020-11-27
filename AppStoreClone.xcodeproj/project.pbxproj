@@ -19,6 +19,7 @@
 		CADF72C3257107C000FD74C4 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF72C2257107C000FD74C4 /* SearchResultCell.swift */; };
 		CADF72C625710FEA00FD74C4 /* UIView+LayoutHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF72C525710FEA00FD74C4 /* UIView+LayoutHelpers.swift */; };
 		CADF72C9257117D300FD74C4 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF72C8257117D300FD74C4 /* VerticalStackView.swift */; };
+		CAFABF7E25717E5F0076A26C /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFABF7D25717E5F0076A26C /* AppsGroupCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		CADF72C2257107C000FD74C4 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		CADF72C525710FEA00FD74C4 /* UIView+LayoutHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LayoutHelpers.swift"; sourceTree = "<group>"; };
 		CADF72C8257117D300FD74C4 /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
+		CAFABF7D25717E5F0076A26C /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				CADF72BF257105D700FD74C4 /* AppsViewController.swift */,
+				CAFABF7D25717E5F0076A26C /* AppsGroupCell.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			files = (
 				CADF72BD257105A700FD74C4 /* TodayViewController.swift in Sources */,
 				CABD825925713073004D8396 /* SearchResult.swift in Sources */,
+				CAFABF7E25717E5F0076A26C /* AppsGroupCell.swift in Sources */,
 				CADF72C0257105D700FD74C4 /* AppsViewController.swift in Sources */,
 				CADF72BA2571044000FD74C4 /* SearchViewController.swift in Sources */,
 				CADF72B72570FC6300FD74C4 /* BaseTabBarController.swift in Sources */,
