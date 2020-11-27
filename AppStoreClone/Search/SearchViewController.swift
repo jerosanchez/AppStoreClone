@@ -9,6 +9,8 @@ import UIKit
 
 final class SearchViewController: UICollectionViewController {
     
+    private var searchResults = [SearchResultItem]()
+    
     convenience init() {
         self.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -21,13 +23,14 @@ final class SearchViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return searchResults.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultCell.cellId, for: indexPath) as! SearchResultCell
         
-        cell.configure(name: "App name", category: "Category", ratings: "Ratings")
+        let result = searchResults[indexPath.row]
+        cell.configure(name: result.trackName, category: result.primaryGenreName, ratings: "---")
         
         return cell
     }
@@ -47,12 +50,18 @@ final class SearchViewController: UICollectionViewController {
     private func fetchData() {
         guard let url = URL(string: "https://itunes.apple.com/search?term=instagram&entity=software") else { return }
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            guard let self = self else { return }
+            
             guard error == nil, let data = data else { return }
             
-            guard let searchResult = try? JSONDecoder().decode(SearchResult.self, from: data) else { return }
+            guard let receivedDTO = try? JSONDecoder().decode(SearchResult.self, from: data) else { return }
             
-            searchResult.results.forEach { print($0) }
+            self.searchResults = receivedDTO.results
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
             
         }.resume()
     }
