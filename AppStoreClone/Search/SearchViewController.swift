@@ -9,6 +9,7 @@ import UIKit
 
 final class SearchViewController: UICollectionViewController {
     
+    private let viewModel = SearchViewModel()
     private var searchResults = [SearchResultItem]()
     
     convenience init() {
@@ -49,22 +50,14 @@ final class SearchViewController: UICollectionViewController {
     }
     
     private func fetchData() {
-        guard let url = URL(string: "https://itunes.apple.com/search?term=instagram&entity=software") else { return }
-        
-        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+        viewModel.load { [weak self] results in
             guard let self = self else { return }
-            
-            guard error == nil, let data = data else { return }
-            
-            guard let receivedDTO = try? JSONDecoder().decode(SearchResult.self, from: data) else { return }
-            
-            self.searchResults = receivedDTO.results
-            
+
+            self.searchResults = results
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
-            
-        }.resume()
+        }
     }
 }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CABD825925713073004D8396 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABD825825713073004D8396 /* SearchResult.swift */; };
+		CABD825C25713534004D8396 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABD825B25713534004D8396 /* SearchViewModel.swift */; };
 		CADF729E2570F95300FD74C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF729D2570F95300FD74C4 /* AppDelegate.swift */; };
 		CADF72A42570F95400FD74C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CADF72A32570F95400FD74C4 /* Assets.xcassets */; };
 		CADF72B72570FC6300FD74C4 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADF72B62570FC6300FD74C4 /* BaseTabBarController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		CABD825825713073004D8396 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		CABD825B25713534004D8396 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		CADF729A2570F95300FD74C4 /* AppStoreClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADF729D2570F95300FD74C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CADF72A32570F95400FD74C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				CADF72B92571044000FD74C4 /* SearchViewController.swift */,
 				CADF72C2257107C000FD74C4 /* SearchResultCell.swift */,
+				CABD825B25713534004D8396 /* SearchViewModel.swift */,
 				CABD825825713073004D8396 /* SearchResult.swift */,
 			);
 			path = Search;
@@ -201,6 +204,7 @@
 				CADF72BA2571044000FD74C4 /* SearchViewController.swift in Sources */,
 				CADF72B72570FC6300FD74C4 /* BaseTabBarController.swift in Sources */,
 				CADF72C3257107C000FD74C4 /* SearchResultCell.swift in Sources */,
+				CABD825C25713534004D8396 /* SearchViewModel.swift in Sources */,
 				CADF72C9257117D300FD74C4 /* VerticalStackView.swift in Sources */,
 				CADF72C625710FEA00FD74C4 /* UIView+LayoutHelpers.swift in Sources */,
 				CADF729E2570F95300FD74C4 /* AppDelegate.swift in Sources */,
