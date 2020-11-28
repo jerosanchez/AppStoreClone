@@ -12,7 +12,7 @@ class AppsGroupInfoCell: UICollectionViewCell {
     
     static var cellId: String { return AppsGroupInfoCell.description() }
     
-    let imageView: UIImageView = {
+    private let imageView: UIImageView = {
         let imageView = UIImageView(cornerRadius: 8)
         imageView.backgroundColor = .lightGray
         imageView.constraintWidth(constant: 64)
@@ -20,11 +20,11 @@ class AppsGroupInfoCell: UICollectionViewCell {
         return imageView
     }()
     
-    let nameLabel = UILabel(text: "App name", font: .systemFont(ofSize: 20, weight: .regular))
+    private let nameLabel = UILabel(text: "App name", font: .systemFont(ofSize: 20, weight: .regular))
     
-    let companyLabel = UILabel(text: "Company name", font: .systemFont(ofSize: 13, weight: .regular))
+    private let companyLabel = UILabel(text: "Company name", font: .systemFont(ofSize: 13, weight: .regular))
     
-    let getButton: UIButton = {
+    private let getButton: UIButton = {
         let button = UIButton(title: "GET")
         button.backgroundColor = .init(white: 0.95, alpha: 1)
         button.constraintWidth(constant: 80)
