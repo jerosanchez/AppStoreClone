@@ -11,10 +11,13 @@ class AppsPageHeader: UICollectionReusableView {
     
     static var cellId: String { return AppsPageHeader.description() }
     
+    private let horizontalController = AppsHeaderViewController()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = .blue
+
+        addSubview(horizontalController.view)
+        horizontalController.view.fillSuperview()
     }
     
     required init?(coder: NSCoder) {
