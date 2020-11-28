@@ -8,7 +8,7 @@
 import Foundation
 
 final class SearchService {
-    typealias LoadResult = Result<[SearchResultItem], Error>
+    typealias LoadResult = Result<SearchResult, Error>
     
     func load(searchTerm: String, completion: @escaping (LoadResult) -> Void) {
         guard let url = URL(string: "https://itunes.apple.com/search?term=\(searchTerm)&entity=software") else { return }

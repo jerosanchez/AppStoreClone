@@ -102,8 +102,8 @@ extension SearchPageViewController: UISearchBarDelegate {
     
     private func handleResult(_ result: SearchService.LoadResult) {
         switch result {
-        case let .success(results):
-            self.searchResults = results
+        case let .success(result):
+            self.searchResults = result.results
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
