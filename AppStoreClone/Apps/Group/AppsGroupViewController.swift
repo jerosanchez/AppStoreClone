@@ -24,7 +24,7 @@ class AppsGroupViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppInfoCell.cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsGroupInfoCell.cellId, for: indexPath)
         return cell
     }
     
@@ -41,7 +41,7 @@ class AppsGroupViewController: UICollectionViewController {
     }
     
     private func registerCells() {
-        collectionView.register(AppInfoCell.self, forCellWithReuseIdentifier: AppInfoCell.cellId)
+        collectionView.register(AppsGroupInfoCell.self, forCellWithReuseIdentifier: AppsGroupInfoCell.cellId)
     }
 }
 

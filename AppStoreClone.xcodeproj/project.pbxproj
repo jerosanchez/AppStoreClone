@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA6E75032572518A00EE0443 /* AppInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E75022572518A00EE0443 /* AppInfoCell.swift */; };
+		CA6E75032572518A00EE0443 /* AppsGroupInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E75022572518A00EE0443 /* AppsGroupInfoCell.swift */; };
 		CA6E7506257257A300EE0443 /* UIButton+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E7505257257A300EE0443 /* UIButton+Helpers.swift */; };
 		CA6E7509257257B700EE0443 /* UIImageView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E7508257257B700EE0443 /* UIImageView+Helpers.swift */; };
 		CA6E750D25725C5300EE0443 /* AppsPageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E750C25725C5300EE0443 /* AppsPageHeader.swift */; };
@@ -30,7 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CA6E75022572518A00EE0443 /* AppInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoCell.swift; sourceTree = "<group>"; };
+		CA6E75022572518A00EE0443 /* AppsGroupInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupInfoCell.swift; sourceTree = "<group>"; };
 		CA6E7505257257A300EE0443 /* UIButton+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Helpers.swift"; sourceTree = "<group>"; };
 		CA6E7508257257B700EE0443 /* UIImageView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helpers.swift"; sourceTree = "<group>"; };
 		CA6E750C25725C5300EE0443 /* AppsPageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageHeader.swift; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			children = (
 				CAFABF7D25717E5F0076A26C /* AppsPageGroupCell.swift */,
 				CAFABF832571848A0076A26C /* AppsGroupViewController.swift */,
-				CA6E75022572518A00EE0443 /* AppInfoCell.swift */,
+				CA6E75022572518A00EE0443 /* AppsGroupInfoCell.swift */,
 			);
 			path = Group;
 			sourceTree = "<group>";
@@ -250,7 +250,7 @@
 				CA6E7506257257A300EE0443 /* UIButton+Helpers.swift in Sources */,
 				CADF72BD257105A700FD74C4 /* TodayViewController.swift in Sources */,
 				CABD825925713073004D8396 /* SearchResult.swift in Sources */,
-				CA6E75032572518A00EE0443 /* AppInfoCell.swift in Sources */,
+				CA6E75032572518A00EE0443 /* AppsGroupInfoCell.swift in Sources */,
 				CAFABF7E25717E5F0076A26C /* AppsPageGroupCell.swift in Sources */,
 				CADF72C0257105D700FD74C4 /* AppsPageViewController.swift in Sources */,
 				CADF72BA2571044000FD74C4 /* SearchPageViewController.swift in Sources */,

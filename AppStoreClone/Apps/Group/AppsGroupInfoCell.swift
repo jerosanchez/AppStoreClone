@@ -7,9 +7,9 @@
 
 import UIKit
 
-class AppInfoCell: UICollectionViewCell {
+class AppsGroupInfoCell: UICollectionViewCell {
     
-    static var cellId: String { return AppInfoCell.description() }
+    static var cellId: String { return AppsGroupInfoCell.description() }
     
     let imageView: UIImageView = {
         let imageView = UIImageView(cornerRadius: 8)
