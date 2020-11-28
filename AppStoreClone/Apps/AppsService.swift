@@ -9,6 +9,8 @@ import Foundation
 
 enum AppsCategory: String {
     case topFree = "top-free"
+    case newGames = "new-games-we-love"
+    case topGrossing = "top-grossing"
 }
 
 final class AppsService {

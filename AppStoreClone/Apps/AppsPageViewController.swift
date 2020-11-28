@@ -10,7 +10,7 @@ import UIKit
 class AppsPageViewController: UICollectionViewController {
     
     private let service = AppsService()
-    private var loadResult: AppsLoadResult?
+    private var groups = [AppsLoadResult]()
 
     convenience init() {
         self.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -24,14 +24,12 @@ class AppsPageViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return loadResult != nil ? 1 : 0
+        return groups.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let loadResult = loadResult else { return UICollectionViewCell() }
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsPageGroupsCell.cellId, for: indexPath) as! AppsPageGroupsCell
-        cell.configure(with: loadResult)
+        cell.configure(with: groups[indexPath.item])
         return cell
     }
     
@@ -54,17 +52,32 @@ class AppsPageViewController: UICollectionViewController {
     }
     
     private func fetchData() {
-        service.load(category: .topFree) { result in
-            switch result {
-            case let .success(loadResult):
-                self.loadResult = loadResult
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-                
-            case let .failure(error):
-                print("Load failed: \(error)")
+        service.load(category: .topFree) { [weak self] result in
+            guard let self = self else { return }
+            self.handleResult(result)
+        }
+        
+        service.load(category: .topGrossing) { [weak self] result in
+            guard let self = self else { return }
+            self.handleResult(result)
+        }
+
+        service.load(category: .newGames) { [weak self] result in
+            guard let self = self else { return }
+            self.handleResult(result)
+        }
+    }
+    
+    private func handleResult(_ result: AppsService.LoadResult) {
+        switch result {
+        case let .success(loadResult):
+            self.groups.append(loadResult)
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
             }
+            
+        case let .failure(error):
+            print("Load failed: \(error)")
         }
     }
 }
