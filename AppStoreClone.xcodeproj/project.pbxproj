@@ -43,6 +43,7 @@
 		CA9B4E7E2572BA50009644B9 /* AppsHeaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderService.swift; sourceTree = "<group>"; };
 		CA9B4E812572BB3A009644B9 /* AppsHeaderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderItem.swift; sourceTree = "<group>"; };
 		CA9B4E8E2572CBAF009644B9 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		CA9B4E922572D2C5009644B9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CABD825825713073004D8396 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		CABD825B25713534004D8396 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		CAD00B63257261F500B76EC4 /* AppsHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +133,7 @@
 		CADF72912570F95300FD74C4 = {
 			isa = PBXGroup;
 			children = (
+				CA9B4E922572D2C5009644B9 /* README.md */,
 				CADF729C2570F95300FD74C4 /* AppStoreClone */,
 				CADF729B2570F95300FD74C4 /* Products */,
 			);
