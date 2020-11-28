@@ -17,7 +17,7 @@ final class AppsHeaderService {
     func load(completion: @escaping (LoadResult) -> Void) {
         guard let url = URL(string: "https://api.letsbuildthatapp.com/appstore/social") else { return }
         
-        HTTPClient<[AppsHeaderItem]>().get(from: url) { result in
+        HTTPClient.get(from: url) { (result: Result<[AppsHeaderItem], Error>) in
             switch result {
             case let .success(items):
                 completion(.success(items))

@@ -7,14 +7,14 @@
 
 import Foundation
 
-class HTTPClient<T: Decodable> {
+class HTTPClient {
 
     enum Error: Swift.Error {
         case serviceError
         case invalidaData
     }
 
-    func get(from url: URL, completion: @escaping (Result<T, Error>) -> Void) {
+    static func get<T: Decodable>(from url: URL, completion: @escaping (Result<T, Swift.Error>) -> Void) {
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard error == nil, let data = data else {
                 completion(.failure(Error.serviceError))

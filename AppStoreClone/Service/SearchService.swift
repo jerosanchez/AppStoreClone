@@ -17,7 +17,7 @@ final class SearchService {
     func load(searchTerm: String, completion: @escaping (LoadResult) -> Void) {
         guard let url = URL(string: "https://itunes.apple.com/search?term=\(searchTerm)&entity=software") else { return }
         
-        HTTPClient<[SearchResultItem]>().get(from: url) { result in
+        HTTPClient.get(from: url) { (result: Result<[SearchResultItem], Error>) in
             switch result {
             case let .success(items):
                 completion(.success(items))

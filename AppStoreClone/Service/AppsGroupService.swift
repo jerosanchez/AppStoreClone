@@ -23,7 +23,7 @@ final class AppsGroupService {
     func load(group: LoadGroup, completion: @escaping (LoadResult) -> Void) {
         guard let url = URL(string: "https://rss.itunes.apple.com/api/v1/us/ios-apps/\(group.rawValue)/all/50/explicit.json") else { return }
         
-        HTTPClient<Root>().get(from: url) { result in
+        HTTPClient.get(from: url) { (result: Result<Root, Error>) in
             switch result {
             case let .success(root):
                 completion(.success(root.feed))
