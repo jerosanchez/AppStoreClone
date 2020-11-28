@@ -9,6 +9,12 @@ import UIKit
 
 class AppsHeaderViewController: UICollectionViewController {
     
+    var headerItems = [AppsHeaderItem]() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     convenience init() {
         self.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -20,11 +26,12 @@ class AppsHeaderViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return headerItems.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsHeaderInfoCell.cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsHeaderInfoCell.cellId, for: indexPath) as! AppsHeaderInfoCell
+        cell.configure(with: headerItems[indexPath.item])
         return cell
     }
 

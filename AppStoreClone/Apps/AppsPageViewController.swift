@@ -12,6 +12,7 @@ class AppsPageViewController: UICollectionViewController {
     private let appsService = AppsService()
     private let appsHeaderService = AppsHeaderService()
     private var groupLoadResults = [AppsLoadResult]()
+    private var appsHeaderItems = [AppsHeaderItem]()
 
     convenience init() {
         self.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -35,7 +36,8 @@ class AppsPageViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AppsPageHeader.cellId, for: indexPath)
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AppsPageHeader.cellId, for: indexPath) as! AppsPageHeader
+        header.configure(with: appsHeaderItems)
         return header
     }
     
@@ -77,10 +79,15 @@ class AppsPageViewController: UICollectionViewController {
             dispatchGroup.leave()
         }
         
-        appsHeaderService.load { result in
+        appsHeaderService.load { [weak self] result in
+            guard let self = self else { return }
+
             switch result {
             case let .success(loadResult):
-                loadResult.forEach { print ($0) }
+                self.appsHeaderItems = loadResult
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
                 
             case let .failure(error):
                 print("Load failed: \(error)")
