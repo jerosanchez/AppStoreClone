@@ -14,6 +14,14 @@ class AppsPageViewController: UICollectionViewController {
     private var groupLoadResults = [AppsLoadResult]()
     private var appsHeaderItems = [AppsHeaderItem]()
 
+    private let spinnerView: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+        spinner.color = .black
+        spinner.startAnimating()
+        spinner.hidesWhenStopped = true
+        return spinner
+    }()
+    
     convenience init() {
         self.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -47,6 +55,9 @@ class AppsPageViewController: UICollectionViewController {
         collectionView.backgroundColor = .white
 
         registerCells()
+        
+        view.addSubview(spinnerView)
+        spinnerView.fillSuperview()
     }
     
     private func registerCells() {
@@ -100,6 +111,8 @@ class AppsPageViewController: UICollectionViewController {
             let loadedGroups = groups.compactMap { $0 }
             self.groupLoadResults.append(contentsOf: loadedGroups)
             self.collectionView.reloadData()
+            
+            self.spinnerView.stopAnimating()
         }
     }
     
