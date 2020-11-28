@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class AppsGroupInfoCell: UICollectionViewCell {
     
@@ -54,5 +55,11 @@ class AppsGroupInfoCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(with model: AppsLoadResultItem) {
+        nameLabel.text = model.name
+        companyLabel.text = model.artistName
+        imageView.sd_setImage(with: URL(string: model.artworkUrl100))
     }
 }

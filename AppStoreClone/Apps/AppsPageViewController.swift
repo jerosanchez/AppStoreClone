@@ -10,7 +10,7 @@ import UIKit
 class AppsPageViewController: UICollectionViewController {
     
     private let service = AppsService()
-    private var loadResults: AppsLoadResult!
+    private var loadResult: AppsLoadResult?
 
     convenience init() {
         self.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -23,31 +23,15 @@ class AppsPageViewController: UICollectionViewController {
         fetchData()
     }
     
-    private func fetchData() {
-        service.load(category: .topFree) { result in
-            switch result {
-            case let .success(results):
-                self.loadResults = results
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-                
-                print(results.title)
-                results.results.forEach { print($0) }
-                
-            case let .failure(error):
-                print("Load failed: \(error)")
-            }
-        }
-    }
-        
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return loadResult != nil ? 1 : 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsPageGroupsCell.cellId, for: indexPath)
+        guard let loadResult = loadResult else { return UICollectionViewCell() }
         
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsPageGroupsCell.cellId, for: indexPath) as! AppsPageGroupsCell
+        cell.configure(with: loadResult)
         return cell
     }
     
@@ -67,6 +51,21 @@ class AppsPageViewController: UICollectionViewController {
     private func registerCells() {
         collectionView.register(AppsPageGroupsCell.self, forCellWithReuseIdentifier: AppsPageGroupsCell.cellId)
         collectionView.register(AppsPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AppsPageHeader.cellId)
+    }
+    
+    private func fetchData() {
+        service.load(category: .topFree) { result in
+            switch result {
+            case let .success(loadResult):
+                self.loadResult = loadResult
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+                
+            case let .failure(error):
+                print("Load failed: \(error)")
+            }
+        }
     }
 }
 

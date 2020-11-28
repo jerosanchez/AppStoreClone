@@ -11,9 +11,9 @@ class AppsPageGroupsCell: UICollectionViewCell {
 
     static var cellId: String { return AppsPageGroupsCell.description() }
     
-    let titleLabel = UILabel(text: "App Section", font: .systemFont(ofSize: 30, weight: .bold))
+    private let titleLabel = UILabel(text: "App Section", font: .systemFont(ofSize: 30, weight: .bold))
     
-    let horizontalController = AppsGroupViewController()
+    private let horizontalController = AppsGroupViewController()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,5 +29,10 @@ class AppsPageGroupsCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(with model: AppsLoadResult) {
+        titleLabel.text = model.title
+        horizontalController.loadResults = model.results
     }
 }

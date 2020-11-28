@@ -9,6 +9,12 @@ import UIKit
 
 class AppsGroupViewController: UICollectionViewController {
     
+    var loadResults = [AppsLoadResultItem]() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     convenience init() {
         self.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -20,11 +26,12 @@ class AppsGroupViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return loadResults.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsGroupInfoCell.cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsGroupInfoCell.cellId, for: indexPath) as! AppsGroupInfoCell
+        cell.configure(with: loadResults[indexPath.item])
         return cell
     }
     
