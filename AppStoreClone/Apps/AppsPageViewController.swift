@@ -9,7 +9,8 @@ import UIKit
 
 class AppsPageViewController: UICollectionViewController {
     
-    private let service = AppsService()
+    private let appsService = AppsService()
+    private let appsHeaderService = AppsHeaderService()
     private var groupLoadResults = [AppsLoadResult]()
 
     convenience init() {
@@ -56,29 +57,39 @@ class AppsPageViewController: UICollectionViewController {
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()
-        service.load(category: .topFree) { [weak self] result in
+        appsService.load(category: .topFree) { [weak self] result in
             guard let self = self else { return }
             groups[0] = self.map(result)
             dispatchGroup.leave()
         }
         
         dispatchGroup.enter()
-        service.load(category: .topGrossing) { [weak self] result in
+        appsService.load(category: .topGrossing) { [weak self] result in
             guard let self = self else { return }
             groups[1] = self.map(result)
             dispatchGroup.leave()
         }
 
         dispatchGroup.enter()
-        service.load(category: .newGames) { [weak self] result in
+        appsService.load(category: .newGames) { [weak self] result in
             guard let self = self else { return }
             groups[2] = self.map(result)
             dispatchGroup.leave()
-       }
+        }
+        
+        appsHeaderService.load { result in
+            switch result {
+            case let .success(loadResult):
+                loadResult.forEach { print ($0) }
+                
+            case let .failure(error):
+                print("Load failed: \(error)")
+            }
+        }
         
         dispatchGroup.notify(queue: .main) { [weak self] in
             guard let self = self else { return }
-
+            
             let loadedGroups = groups.compactMap { $0 }
             self.groupLoadResults.append(contentsOf: loadedGroups)
             self.collectionView.reloadData()
