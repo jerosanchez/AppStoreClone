@@ -2,8 +2,8 @@
 
 A simple app to show case a professional UIKit-based app.
 
-![Apps](Images/apps.png)
-![Search](Images/search.png)
+![Apps](Images/apps.png | width=200)
+![Search](Images/search.png | width=200)
 
 This project has been inspired by **Brian Voong**'s sample app in his paid course: [App Store JSON APIs](https://www.letsbuildthatapp.com/course/AppStore%20JSON%20APIs).
 
