@@ -8,22 +8,11 @@
 import Foundation
 
 final class AppsHeaderService {
-    
-    enum LoadResult {
-        case success([AppsHeaderItem])
-        case failure(Error)
-    }
+    typealias LoadResult = Result<[AppsHeaderItem], Error>
     
     func load(completion: @escaping (LoadResult) -> Void) {
         guard let url = URL(string: "https://api.letsbuildthatapp.com/appstore/social") else { return }
         
-        HTTPClient.get(from: url) { (result: Result<[AppsHeaderItem], Error>) in
-            switch result {
-            case let .success(items):
-                completion(.success(items))
-            case let .failure(error):
-                completion(.failure(error))
-            }
-        }
+        HTTPClient.get(from: url, completion: completion)
     }
 }

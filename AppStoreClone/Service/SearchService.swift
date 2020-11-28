@@ -8,22 +8,11 @@
 import Foundation
 
 final class SearchService {
-    
-    enum LoadResult {
-        case success([SearchResultItem])
-        case failure(Error)
-    }
+    typealias LoadResult = Result<[SearchResultItem], Error>
     
     func load(searchTerm: String, completion: @escaping (LoadResult) -> Void) {
         guard let url = URL(string: "https://itunes.apple.com/search?term=\(searchTerm)&entity=software") else { return }
         
-        HTTPClient.get(from: url) { (result: Result<[SearchResultItem], Error>) in
-            switch result {
-            case let .success(items):
-                completion(.success(items))
-            case let .failure(error):
-                completion(.failure(error))
-            }
-        }
+        HTTPClient.get(from: url, completion: completion)
     }
 }
