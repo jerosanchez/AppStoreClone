@@ -85,6 +85,17 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		CA9B4E892572C513009644B9 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CADF72CC257119D000FD74C4 /* Root */,
+				CADF72CE257119ED00FD74C4 /* Today */,
+				CADF72CF257119F600FD74C4 /* Apps */,
+				CADF72CD257119E200FD74C4 /* Search */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		CAD3D726257260FE00EFCFA2 /* Group */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,10 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				CADF72CB257119BB00FD74C4 /* Bootstrap */,
-				CADF72CC257119D000FD74C4 /* Root */,
-				CADF72CE257119ED00FD74C4 /* Today */,
-				CADF72CF257119F600FD74C4 /* Apps */,
-				CADF72CD257119E200FD74C4 /* Search */,
+				CA9B4E892572C513009644B9 /* Scenes */,
 				CADF72D1257119FD00FD74C4 /* Helpers */,
 				CADF72A32570F95400FD74C4 /* Assets.xcassets */,
 				CADF72AB2570F95400FD74C4 /* Info.plist */,
