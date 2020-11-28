@@ -10,7 +10,7 @@ import UIKit
 class AppsPageViewController: UICollectionViewController {
     
     private let service = AppsService()
-    private var groups = [AppsLoadResult]()
+    private var groupLoadResults = [AppsLoadResult]()
 
     convenience init() {
         self.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -24,12 +24,12 @@ class AppsPageViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return groups.count
+        return groupLoadResults.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsPageGroupsCell.cellId, for: indexPath) as! AppsPageGroupsCell
-        cell.configure(with: groups[indexPath.item])
+        cell.configure(with: groupLoadResults[indexPath.item])
         return cell
     }
     
@@ -52,32 +52,47 @@ class AppsPageViewController: UICollectionViewController {
     }
     
     private func fetchData() {
+        var groups: [AppsLoadResult?] = [nil, nil, nil]
+        let dispatchGroup = DispatchGroup()
+        
+        dispatchGroup.enter()
         service.load(category: .topFree) { [weak self] result in
             guard let self = self else { return }
-            self.handleResult(result)
+            groups[0] = self.map(result)
+            dispatchGroup.leave()
         }
         
+        dispatchGroup.enter()
         service.load(category: .topGrossing) { [weak self] result in
             guard let self = self else { return }
-            self.handleResult(result)
+            groups[1] = self.map(result)
+            dispatchGroup.leave()
         }
 
+        dispatchGroup.enter()
         service.load(category: .newGames) { [weak self] result in
             guard let self = self else { return }
-            self.handleResult(result)
+            groups[2] = self.map(result)
+            dispatchGroup.leave()
+       }
+        
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            guard let self = self else { return }
+
+            let loadedGroups = groups.compactMap { $0 }
+            self.groupLoadResults.append(contentsOf: loadedGroups)
+            self.collectionView.reloadData()
         }
     }
     
-    private func handleResult(_ result: AppsService.LoadResult) {
+    private func map(_ result: AppsService.LoadResult) -> AppsLoadResult? {
         switch result {
         case let .success(loadResult):
-            self.groups.append(loadResult)
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
+            return loadResult
             
         case let .failure(error):
             print("Load failed: \(error)")
+            return nil
         }
     }
 }
