@@ -85,7 +85,7 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
-		CA9B4E892572C513009644B9 /* Scenes */ = {
+		CA9B4E892572C513009644B9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				CADF72CC257119D000FD74C4 /* Root */,
@@ -93,7 +93,27 @@
 				CADF72CF257119F600FD74C4 /* Apps */,
 				CADF72CD257119E200FD74C4 /* Search */,
 			);
-			path = Scenes;
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CA9B4E8B2572C6A7009644B9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CABD825B25713534004D8396 /* SearchService.swift */,
+				CAD00B6A25726E6C00B76EC4 /* AppsGroupService.swift */,
+				CA9B4E7E2572BA50009644B9 /* AppsHeaderService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		CA9B4E8C2572C6C4009644B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CAD00B6E2572701500B76EC4 /* AppsGroup.swift */,
+				CA9B4E812572BB3A009644B9 /* AppsHeaderItem.swift */,
+				CABD825825713073004D8396 /* SearchResult.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CAD3D726257260FE00EFCFA2 /* Group */ = {
@@ -126,7 +146,9 @@
 			isa = PBXGroup;
 			children = (
 				CADF72CB257119BB00FD74C4 /* Bootstrap */,
-				CA9B4E892572C513009644B9 /* Scenes */,
+				CA9B4E8C2572C6C4009644B9 /* Model */,
+				CA9B4E8B2572C6A7009644B9 /* Service */,
+				CA9B4E892572C513009644B9 /* UI */,
 				CADF72D1257119FD00FD74C4 /* Helpers */,
 				CADF72A32570F95400FD74C4 /* Assets.xcassets */,
 				CADF72AB2570F95400FD74C4 /* Info.plist */,
@@ -155,8 +177,6 @@
 			children = (
 				CADF72B92571044000FD74C4 /* SearchPageViewController.swift */,
 				CADF72C2257107C000FD74C4 /* SearchPageResultCell.swift */,
-				CABD825B25713534004D8396 /* SearchService.swift */,
-				CABD825825713073004D8396 /* SearchResult.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -175,10 +195,6 @@
 				CA6E751425725E8700EE0443 /* Header */,
 				CAD3D726257260FE00EFCFA2 /* Group */,
 				CADF72BF257105D700FD74C4 /* AppsPageViewController.swift */,
-				CAD00B6A25726E6C00B76EC4 /* AppsGroupService.swift */,
-				CAD00B6E2572701500B76EC4 /* AppsGroup.swift */,
-				CA9B4E7E2572BA50009644B9 /* AppsHeaderService.swift */,
-				CA9B4E812572BB3A009644B9 /* AppsHeaderItem.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
