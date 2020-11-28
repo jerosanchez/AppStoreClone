@@ -9,9 +9,9 @@ import UIKit
 
 class AppsPageViewController: UICollectionViewController {
     
-    private let appsService = AppsService()
+    private let appsService = AppsGroupService()
     private let appsHeaderService = AppsHeaderService()
-    private var groupLoadResults = [AppsLoadResult]()
+    private var groupLoadResults = [AppsGroupLoadResult]()
     private var appsHeaderItems = [AppsHeaderItem]()
 
     private let spinnerView: UIActivityIndicatorView = {
@@ -66,25 +66,25 @@ class AppsPageViewController: UICollectionViewController {
     }
     
     private func fetchData() {
-        var groups: [AppsLoadResult?] = [nil, nil, nil]
+        var groups: [AppsGroupLoadResult?] = [nil, nil, nil]
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()
-        appsService.load(category: .topFree) { [weak self] result in
+        appsService.load(group: .topFree) { [weak self] result in
             guard let self = self else { return }
             groups[0] = self.map(result)
             dispatchGroup.leave()
         }
         
         dispatchGroup.enter()
-        appsService.load(category: .topGrossing) { [weak self] result in
+        appsService.load(group: .topGrossing) { [weak self] result in
             guard let self = self else { return }
             groups[1] = self.map(result)
             dispatchGroup.leave()
         }
 
         dispatchGroup.enter()
-        appsService.load(category: .newGames) { [weak self] result in
+        appsService.load(group: .newGames) { [weak self] result in
             guard let self = self else { return }
             groups[2] = self.map(result)
             dispatchGroup.leave()
@@ -116,7 +116,7 @@ class AppsPageViewController: UICollectionViewController {
         }
     }
     
-    private func map(_ result: AppsService.LoadResult) -> AppsLoadResult? {
+    private func map(_ result: AppsGroupService.LoadResult) -> AppsGroupLoadResult? {
         switch result {
         case let .success(loadResult):
             return loadResult

@@ -9,7 +9,7 @@ import UIKit
 
 class AppsGroupViewController: UICollectionViewController {
     
-    var loadResults = [AppsLoadResultItem]() {
+    var loadResults = [AppsGroupLoadResultItem]() {
         didSet {
             collectionView.reloadData()
         }

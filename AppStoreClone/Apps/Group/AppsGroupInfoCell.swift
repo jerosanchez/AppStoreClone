@@ -57,7 +57,7 @@ class AppsGroupInfoCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with model: AppsLoadResultItem) {
+    func configure(with model: AppsGroupLoadResultItem) {
         nameLabel.text = model.name
         companyLabel.text = model.artistName
         imageView.sd_setImage(with: URL(string: model.artworkUrl100))

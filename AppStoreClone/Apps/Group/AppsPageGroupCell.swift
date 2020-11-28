@@ -31,7 +31,7 @@ class AppsPageGroupsCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with model: AppsLoadResult) {
+    func configure(with model: AppsGroupLoadResult) {
         titleLabel.text = model.title
         horizontalController.loadResults = model.results
     }

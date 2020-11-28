@@ -1,5 +1,5 @@
 //
-//  AppsService.swift
+//  AppsGroupService.swift
 //  AppStoreClone
 //
 //  Created by Jero Sanchez on 28/11/20.
@@ -7,16 +7,16 @@
 
 import Foundation
 
-enum AppsCategory: String {
+enum AppsGroup: String {
     case topFree = "top-free"
     case newGames = "new-games-we-love"
     case topGrossing = "top-grossing"
 }
 
-final class AppsService {
+final class AppsGroupService {
     
     enum LoadResult {
-        case success(AppsLoadResult)
+        case success(AppsGroupLoadResult)
         case failure(Error)
     }
     
@@ -25,8 +25,8 @@ final class AppsService {
         case invalidaData
     }
     
-    func load(category: AppsCategory, completion: @escaping (LoadResult) -> Void) {
-        guard let url = URL(string: "https://rss.itunes.apple.com/api/v1/us/ios-apps/\(category.rawValue)/all/50/explicit.json") else { return }
+    func load(group: AppsGroup, completion: @escaping (LoadResult) -> Void) {
+        guard let url = URL(string: "https://rss.itunes.apple.com/api/v1/us/ios-apps/\(group.rawValue)/all/50/explicit.json") else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard error == nil, let data = data else {
@@ -46,5 +46,5 @@ final class AppsService {
 }
 
 private struct Root: Decodable {
-    let feed: AppsLoadResult
+    let feed: AppsGroupLoadResult
 }
