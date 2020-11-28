@@ -13,13 +13,9 @@ final class SearchResultCell: UICollectionViewCell {
     static var cellId: String { return SearchResultCell.description() }
     
     private let appIconImageView: UIImageView = {
-        let imageView = UIImageView()
-        
+        let imageView = UIImageView(cornerRadius: 12)
         imageView.widthAnchor.constraint(equalToConstant: 64).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 64).isActive = true
-        imageView.layer.cornerRadius = 12
-        imageView.clipsToBounds = true
-
         return imageView
     }()
     
@@ -30,15 +26,12 @@ final class SearchResultCell: UICollectionViewCell {
     private let ratingsLabel = UILabel(text: "9.2M")
     
     private let getButton: UIButton = {
-        let button = UIButton(type: .system)
-        
-        button.setTitle("GET", for: .normal)
+        let button = UIButton(title: "GET")
         button.setTitleColor(.blue, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
         button.backgroundColor = UIColor(white: 0.95, alpha: 1)
         button.widthAnchor.constraint(equalToConstant: 80).isActive = true
         button.layer.cornerRadius = 12
-
         return button
     }()
     
