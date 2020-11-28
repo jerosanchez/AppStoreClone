@@ -18,7 +18,7 @@ class AppsGroupsCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .lightGray
+        backgroundColor = .white
         
         addSubview(titleLabel)
         titleLabel.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor)

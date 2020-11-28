@@ -31,7 +31,7 @@ class AppsGroupViewController: UICollectionViewController {
     // MARK: - Helpers
     
     private func setup() {
-        collectionView.backgroundColor = .blue
+        collectionView.backgroundColor = .white
 
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout{
             layout.scrollDirection = .horizontal

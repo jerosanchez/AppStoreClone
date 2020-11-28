@@ -13,7 +13,7 @@ class AppInfoCell: UICollectionViewCell {
     
     let imageView: UIImageView = {
         let imageView = UIImageView(cornerRadius: 8)
-        imageView.backgroundColor = .red
+        imageView.backgroundColor = .lightGray
         imageView.constraintWidth(constant: 64)
         imageView.constraintHeight(constant: 64)
         return imageView
