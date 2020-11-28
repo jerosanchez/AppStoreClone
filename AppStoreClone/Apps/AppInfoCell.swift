@@ -7,32 +7,6 @@
 
 import UIKit
 
-extension UIImageView {
-    convenience init(cornerRadius: CGFloat) {
-        self.init(image: nil)
-        self.layer.cornerRadius = cornerRadius
-        self.clipsToBounds = true
-        self.contentMode = .scaleAspectFill
-    }
-}
-
-extension UIButton {
-    convenience init(title: String) {
-        self.init(type: .system)
-        self.setTitle(title, for: .normal)
-    }
-}
-
-extension UIView {
-    func constraintWidth(constant: CGFloat) {
-        widthAnchor.constraint(equalToConstant: constant).isActive = true
-    }
-    
-    func constraintHeight(constant: CGFloat) {
-        heightAnchor.constraint(equalToConstant: constant).isActive = true
-    }
-}
-
 class AppInfoCell: UICollectionViewCell {
     
     static var cellId: String { return AppInfoCell.description() }

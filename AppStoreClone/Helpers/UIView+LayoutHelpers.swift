@@ -41,4 +41,12 @@ extension UIView {
             trailingAnchor.constraint(equalTo: trailing).isActive = true
         }
     }
+    
+    func constraintWidth(constant: CGFloat) {
+        widthAnchor.constraint(equalToConstant: constant).isActive = true
+    }
+    
+    func constraintHeight(constant: CGFloat) {
+        heightAnchor.constraint(equalToConstant: constant).isActive = true
+    }
 }
