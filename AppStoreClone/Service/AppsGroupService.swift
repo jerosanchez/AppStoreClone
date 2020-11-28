@@ -20,28 +20,17 @@ final class AppsGroupService {
         case failure(Error)
     }
     
-    enum LoadResultError: Error {
-        case serviceError
-        case invalidaData
-    }
-    
     func load(group: AppsGroupToLoad, completion: @escaping (LoadResult) -> Void) {
         guard let url = URL(string: "https://rss.itunes.apple.com/api/v1/us/ios-apps/\(group.rawValue)/all/50/explicit.json") else { return }
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard error == nil, let data = data else {
-                completion(.failure(LoadResultError.serviceError))
-                return
+        HTTPClient<Root>().get(from: url) { result in
+            switch result {
+            case let .success(root):
+                completion(.success(root.feed))
+            case let .failure(error):
+                completion(.failure(error))
             }
-            
-            guard let receivedDTO = try? JSONDecoder().decode(Root.self, from: data) else {
-                completion(.failure(LoadResultError.invalidaData))
-                return
-            }
-            
-            completion(.success(receivedDTO.feed))
-            
-        }.resume()
+        }
     }
 }
 
