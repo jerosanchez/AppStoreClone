@@ -1,5 +1,5 @@
 //
-//  AppsGroupLoadResult.swift
+//  AppsGroup.swift
 //  AppStoreClone
 //
 //  Created by Jero Sanchez on 28/11/20.
@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct AppsGroupLoadResult: Decodable {
+struct AppsGroup: Decodable {
     let title: String
-    let results: [AppsGroupLoadResultItem]
+    let results: [AppsGroupItem]
 }
 
-struct AppsGroupLoadResultItem: Decodable {
+struct AppsGroupItem: Decodable {
     let name: String
     let artistName: String
     let artworkUrl100: String

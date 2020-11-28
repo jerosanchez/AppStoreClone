@@ -11,7 +11,7 @@ class AppsPageViewController: UICollectionViewController {
     
     private let appsService = AppsGroupService()
     private let appsHeaderService = AppsHeaderService()
-    private var groupLoadResults = [AppsGroupLoadResult]()
+    private var groupLoadResults = [AppsGroup]()
     private var appsHeaderItems = [AppsHeaderItem]()
 
     private let spinnerView: UIActivityIndicatorView = {
@@ -66,7 +66,7 @@ class AppsPageViewController: UICollectionViewController {
     }
     
     private func fetchData() {
-        var groups: [AppsGroupLoadResult?] = [nil, nil, nil]
+        var groups: [AppsGroup?] = [nil, nil, nil]
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()
@@ -116,7 +116,7 @@ class AppsPageViewController: UICollectionViewController {
         }
     }
     
-    private func map(_ result: AppsGroupService.LoadResult) -> AppsGroupLoadResult? {
+    private func map(_ result: AppsGroupService.LoadResult) -> AppsGroup? {
         switch result {
         case let .success(loadResult):
             return loadResult

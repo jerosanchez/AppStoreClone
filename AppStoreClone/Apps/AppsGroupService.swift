@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AppsGroup: String {
+enum AppsGroupToLoad: String {
     case topFree = "top-free"
     case newGames = "new-games-we-love"
     case topGrossing = "top-grossing"
@@ -16,7 +16,7 @@ enum AppsGroup: String {
 final class AppsGroupService {
     
     enum LoadResult {
-        case success(AppsGroupLoadResult)
+        case success(AppsGroup)
         case failure(Error)
     }
     
@@ -25,7 +25,7 @@ final class AppsGroupService {
         case invalidaData
     }
     
-    func load(group: AppsGroup, completion: @escaping (LoadResult) -> Void) {
+    func load(group: AppsGroupToLoad, completion: @escaping (LoadResult) -> Void) {
         guard let url = URL(string: "https://rss.itunes.apple.com/api/v1/us/ios-apps/\(group.rawValue)/all/50/explicit.json") else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -46,5 +46,5 @@ final class AppsGroupService {
 }
 
 private struct Root: Decodable {
-    let feed: AppsGroupLoadResult
+    let feed: AppsGroup
 }
