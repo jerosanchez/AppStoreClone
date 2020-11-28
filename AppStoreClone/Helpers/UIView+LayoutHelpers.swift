@@ -21,24 +21,24 @@ extension UIView {
         ])
     }
     
-    func anchor(top: NSLayoutAnchor<NSLayoutYAxisAnchor>?, leading: NSLayoutAnchor<NSLayoutXAxisAnchor>?, bottom: NSLayoutAnchor<NSLayoutYAxisAnchor>?, trailing: NSLayoutAnchor<NSLayoutXAxisAnchor>?) {
+    func anchor(top: NSLayoutAnchor<NSLayoutYAxisAnchor>?, leading: NSLayoutAnchor<NSLayoutXAxisAnchor>?, bottom: NSLayoutAnchor<NSLayoutYAxisAnchor>?, trailing: NSLayoutAnchor<NSLayoutXAxisAnchor>?, padding: UIEdgeInsets = .zero) {
 
         translatesAutoresizingMaskIntoConstraints = false
 
         if let top = top {
-            topAnchor.constraint(equalTo: top).isActive = true
+            topAnchor.constraint(equalTo: top, constant: padding.top).isActive = true
         }
         
         if let leading = leading {
-            leadingAnchor.constraint(equalTo: leading).isActive = true
+            leadingAnchor.constraint(equalTo: leading, constant: padding.left).isActive = true
         }
 
         if let bottom = bottom {
-            bottomAnchor.constraint(equalTo: bottom).isActive = true
+            bottomAnchor.constraint(equalTo: bottom, constant: -padding.bottom).isActive = true
         }
 
         if let trailing = trailing {
-            trailingAnchor.constraint(equalTo: trailing).isActive = true
+            trailingAnchor.constraint(equalTo: trailing, constant: -padding.right).isActive = true
         }
     }
     
