@@ -7,12 +7,6 @@
 
 import Foundation
 
-enum AppsGroupToLoad: String {
-    case topFree = "top-free"
-    case newGames = "new-games-we-love"
-    case topGrossing = "top-grossing"
-}
-
 final class AppsGroupService {
     
     enum LoadResult {
@@ -20,7 +14,13 @@ final class AppsGroupService {
         case failure(Error)
     }
     
-    func load(group: AppsGroupToLoad, completion: @escaping (LoadResult) -> Void) {
+    enum LoadGroup: String {
+        case topFree = "top-free"
+        case newGames = "new-games-we-love"
+        case topGrossing = "top-grossing"
+    }
+    
+    func load(group: LoadGroup, completion: @escaping (LoadResult) -> Void) {
         guard let url = URL(string: "https://rss.itunes.apple.com/api/v1/us/ios-apps/\(group.rawValue)/all/50/explicit.json") else { return }
         
         HTTPClient<Root>().get(from: url) { result in
