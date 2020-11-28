@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SearchViewController: UICollectionViewController {
+final class SearchPageViewController: UICollectionViewController {
     
     private let service = SearchService()
     private var searchResults = [SearchResultItem]()
@@ -41,7 +41,7 @@ final class SearchViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultCell.cellId, for: indexPath) as! SearchResultCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchPageResultCell.cellId, for: indexPath) as! SearchPageResultCell
         
         let result = searchResults[indexPath.item]
         cell.configure(with: result)
@@ -61,7 +61,7 @@ final class SearchViewController: UICollectionViewController {
     }
     
     private func registerCells() {
-        collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: SearchResultCell.cellId)
+        collectionView.register(SearchPageResultCell.self, forCellWithReuseIdentifier: SearchPageResultCell.cellId)
     }
     
     private func setupSearchBar() {
@@ -78,13 +78,13 @@ final class SearchViewController: UICollectionViewController {
     }
 }
 
-extension SearchViewController: UICollectionViewDelegateFlowLayout {
+extension SearchPageViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width, height: 350)
     }
 }
 
-extension SearchViewController: UISearchBarDelegate {
+extension SearchPageViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         throttlingTimer?.invalidate()

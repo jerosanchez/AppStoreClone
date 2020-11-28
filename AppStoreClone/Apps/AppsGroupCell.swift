@@ -7,9 +7,9 @@
 
 import UIKit
 
-class AppsGroupsCell: UICollectionViewCell {
+class AppsPageGroupsCell: UICollectionViewCell {
 
-    static var cellId: String { return AppsGroupsCell.description() }
+    static var cellId: String { return AppsPageGroupsCell.description() }
     
     let titleLabel = UILabel(text: "App Section", font: .systemFont(ofSize: 30, weight: .bold))
     

@@ -13,9 +13,9 @@ class BaseTabBarController: UITabBarController {
         super.viewDidLoad()
 
         viewControllers = [
-            makeNavController(viewController: AppsViewController(), title: "Apps", imageName: "apps"),
+            makeNavController(viewController: AppsPageViewController(), title: "Apps", imageName: "apps"),
             makeNavController(viewController: TodayViewController(), title: "Today", imageName: "today"),
-            makeNavController(viewController: SearchViewController(), title: "Search", imageName: "search"),
+            makeNavController(viewController: SearchPageViewController(), title: "Search", imageName: "search"),
         ]
     }
     

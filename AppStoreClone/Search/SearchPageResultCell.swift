@@ -8,9 +8,9 @@
 import UIKit
 import SDWebImage
 
-final class SearchResultCell: UICollectionViewCell {
+final class SearchPageResultCell: UICollectionViewCell {
     
-    static var cellId: String { return SearchResultCell.description() }
+    static var cellId: String { return SearchPageResultCell.description() }
     
     private let appIconImageView: UIImageView = {
         let imageView = UIImageView(cornerRadius: 12)

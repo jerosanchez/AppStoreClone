@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppsViewController: UICollectionViewController {
+class AppsPageViewController: UICollectionViewController {
     
     convenience init() {
         self.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -24,7 +24,7 @@ class AppsViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsGroupsCell.cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsPageGroupsCell.cellId, for: indexPath)
         
         return cell
     }
@@ -43,12 +43,12 @@ class AppsViewController: UICollectionViewController {
     }
     
     private func registerCells() {
-        collectionView.register(AppsGroupsCell.self, forCellWithReuseIdentifier: AppsGroupsCell.cellId)
+        collectionView.register(AppsPageGroupsCell.self, forCellWithReuseIdentifier: AppsPageGroupsCell.cellId)
         collectionView.register(AppsPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AppsPageHeader.cellId)
     }
 }
 
-extension AppsViewController: UICollectionViewDelegateFlowLayout {
+extension AppsPageViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: view.frame.width, height: 300)
     }
