@@ -24,15 +24,14 @@ class AppsHeaderViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsHeaderInfoCell.cellId, for: indexPath)
         return cell
     }
 
     // MARK: - Helpers
     
     private func setup() {
-        collectionView.backgroundColor = .blue
+        collectionView.backgroundColor = .white
 
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout{
             layout.scrollDirection = .horizontal
@@ -42,7 +41,7 @@ class AppsHeaderViewController: UICollectionViewController {
     }
 
     private func registerCells() {
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(AppsHeaderInfoCell.self, forCellWithReuseIdentifier: AppsHeaderInfoCell.cellId)
     }
 }
 
