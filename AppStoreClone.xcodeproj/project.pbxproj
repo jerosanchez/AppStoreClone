@@ -18,6 +18,7 @@
 		CA9B92902573AB170047018E /* AppDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B928F2573AB170047018E /* AppDetailsViewController.swift */; };
 		CA9B92932573F4920047018E /* AppDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B92922573F4920047018E /* AppDetails.swift */; };
 		CA9B92962573F55C0047018E /* AppDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B92952573F55C0047018E /* AppDetailsService.swift */; };
+		CA9B929B2573FA950047018E /* AppDetailsInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B929A2573FA950047018E /* AppDetailsInfoCell.swift */; };
 		CABD825925713073004D8396 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABD825825713073004D8396 /* SearchResult.swift */; };
 		CABD825C25713534004D8396 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABD825B25713534004D8396 /* SearchService.swift */; };
 		CABD826125714BBA004D8396 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = CABD826025714BBA004D8396 /* SDWebImage */; };
@@ -52,6 +53,7 @@
 		CA9B928F2573AB170047018E /* AppDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsViewController.swift; sourceTree = "<group>"; };
 		CA9B92922573F4920047018E /* AppDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetails.swift; sourceTree = "<group>"; };
 		CA9B92952573F55C0047018E /* AppDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsService.swift; sourceTree = "<group>"; };
+		CA9B929A2573FA950047018E /* AppDetailsInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsInfoCell.swift; sourceTree = "<group>"; };
 		CABD825825713073004D8396 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		CABD825B25713534004D8396 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		CAD00B63257261F500B76EC4 /* AppsHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				CA9B928F2573AB170047018E /* AppDetailsViewController.swift */,
+				CA9B929A2573FA950047018E /* AppDetailsInfoCell.swift */,
 			);
 			path = AppDetails;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			files = (
 				CA9B4E7F2572BA50009644B9 /* AppsHeaderService.swift in Sources */,
 				CAFABF812571828D0076A26C /* UILabel+Helpers.swift in Sources */,
+				CA9B929B2573FA950047018E /* AppDetailsInfoCell.swift in Sources */,
 				CA9B4E8F2572CBAF009644B9 /* HTTPClient.swift in Sources */,
 				CAD00B682572649400B76EC4 /* AppsHeaderInfoCell.swift in Sources */,
 				CA612E07257399890068D3D0 /* HSnappingCollectionViewController.swift in Sources */,
