@@ -9,6 +9,12 @@ import UIKit
 
 final class AppDetailsPreviewViewController: HSnappingCollectionViewController {
     
+    var appDetails: AppDetails? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -16,37 +22,35 @@ final class AppDetailsPreviewViewController: HSnappingCollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return appDetails?.screenshotUrls.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .blue
+        guard let appDetails = appDetails else { return AppDetailsScreenshotCell() }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppDetailsScreenshotCell.cellId, for: indexPath) as! AppDetailsScreenshotCell
+        cell.configure(with: appDetails.screenshotUrls[indexPath.item])
         return cell
     }
 
     // MARK: - Helpers
     
-    private var topBottomPadding: CGFloat { return 12 }
-    private var overlapping: CGFloat { return 48 }
-
     private func setup() {
         collectionView.backgroundColor = .white
 
-        collectionView.contentInset = .init(top: topBottomPadding, left: 16, bottom: topBottomPadding, right: overlapping - 16)
+        collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
 
         registerCells()
     }
 
     private func registerCells() {
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(AppDetailsScreenshotCell.self, forCellWithReuseIdentifier: AppDetailsScreenshotCell.cellId)
     }
 }
 
 extension AppDetailsPreviewViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = (view.frame.height - 2 * topBottomPadding)
-        return .init(width: view.frame.width - overlapping, height: height)
+        return .init(width: 250, height: view.frame.height)
     }
 }

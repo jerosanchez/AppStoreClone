@@ -25,8 +25,8 @@ final class AppDetailsPreviewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with model: AppDetails?) {
-        
+    func configure(with appDetails: AppDetails?) {
+        horizontalController.appDetails = appDetails
     }
     
     // MARK: - Helpers

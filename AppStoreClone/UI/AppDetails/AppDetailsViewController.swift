@@ -51,6 +51,7 @@ final class AppDetailsViewController: UICollectionViewController {
             
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppDetailsPreviewCell.cellId, for: indexPath) as! AppDetailsPreviewCell
+            cell.configure(with: appDetails)
             return cell
         }
     }

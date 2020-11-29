@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CA1E73D625740FFF00B9A221 /* AppDetailsPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1E73D525740FFF00B9A221 /* AppDetailsPreviewCell.swift */; };
 		CA1E73DA2574127C00B9A221 /* AppDetailsPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1E73D92574127C00B9A221 /* AppDetailsPreviewViewController.swift */; };
+		CA1E73E02574156200B9A221 /* AppDetailsScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1E73DF2574156200B9A221 /* AppDetailsScreenshotCell.swift */; };
 		CA612E07257399890068D3D0 /* HSnappingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA612E06257399890068D3D0 /* HSnappingCollectionViewController.swift */; };
 		CA6E75032572518A00EE0443 /* AppsGroupInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E75022572518A00EE0443 /* AppsGroupInfoCell.swift */; };
 		CA6E7506257257A300EE0443 /* UIButton+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E7505257257A300EE0443 /* UIButton+Helpers.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		CA1E73D525740FFF00B9A221 /* AppDetailsPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsPreviewCell.swift; sourceTree = "<group>"; };
 		CA1E73D92574127C00B9A221 /* AppDetailsPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsPreviewViewController.swift; sourceTree = "<group>"; };
+		CA1E73DF2574156200B9A221 /* AppDetailsScreenshotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsScreenshotCell.swift; sourceTree = "<group>"; };
 		CA612E06257399890068D3D0 /* HSnappingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSnappingCollectionViewController.swift; sourceTree = "<group>"; };
 		CA6E75022572518A00EE0443 /* AppsGroupInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupInfoCell.swift; sourceTree = "<group>"; };
 		CA6E7505257257A300EE0443 /* UIButton+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Helpers.swift"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				CA1E73D525740FFF00B9A221 /* AppDetailsPreviewCell.swift */,
 				CA1E73D92574127C00B9A221 /* AppDetailsPreviewViewController.swift */,
+				CA1E73DF2574156200B9A221 /* AppDetailsScreenshotCell.swift */,
 			);
 			path = Previews;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				CADF72C625710FEA00FD74C4 /* UIView+LayoutHelpers.swift in Sources */,
 				CAFABF842571848A0076A26C /* AppsGroupViewController.swift in Sources */,
 				CA6E7509257257B700EE0443 /* UIImageView+Helpers.swift in Sources */,
+				CA1E73E02574156200B9A221 /* AppDetailsScreenshotCell.swift in Sources */,
 				CADF729E2570F95300FD74C4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
