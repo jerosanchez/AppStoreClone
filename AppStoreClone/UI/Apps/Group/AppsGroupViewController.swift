@@ -33,8 +33,13 @@ class AppsGroupViewController: HSnappingCollectionViewController {
     
     // MARK: - Helpers
     
+    private var topBottomPadding: CGFloat { return 12 }
+    private var overlapping: CGFloat { return 48 }
+
     private func setup() {
         collectionView.backgroundColor = .white
+
+        collectionView.contentInset = .init(top: topBottomPadding, left: 16, bottom: topBottomPadding, right: overlapping - 16)
 
         registerCells()
     }
@@ -47,8 +52,6 @@ class AppsGroupViewController: HSnappingCollectionViewController {
 extension AppsGroupViewController: UICollectionViewDelegateFlowLayout {
     
     private var lineSpacing: CGFloat { return 10 }
-    private var topBottomPadding: CGFloat { return 12 }
-    private var overlapping: CGFloat { return 48 }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = (view.frame.height - 2 * lineSpacing - 2 * topBottomPadding) / 3
@@ -57,9 +60,5 @@ extension AppsGroupViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: topBottomPadding, left: 16, bottom: topBottomPadding, right: 16)
     }
 }
