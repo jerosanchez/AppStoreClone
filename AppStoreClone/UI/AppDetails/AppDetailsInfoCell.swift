@@ -48,6 +48,13 @@ final class AppDetailsInfoCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configure(with model: AppDetails?) {
+        appIconImageView.sd_setImage(with: URL(string: model?.artworkUrl100 ?? ""))
+        nameLabel.text = model?.trackName
+        priceButton.setTitle(model?.formattedPrice, for: .normal)
+        releaseNotes.text = model?.releaseNotes
+    }
+    
     // MARK: - Helpers
     
     private func setupLayout() {

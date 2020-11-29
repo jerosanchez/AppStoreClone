@@ -16,6 +16,8 @@ final class AppDetailsViewController: UICollectionViewController {
         }
     }
     
+    private var appDetails: AppDetails?
+    
     private let appDetailsService = AppDetailsService()
  
     private let spinnerView: UIActivityIndicatorView = {
@@ -42,6 +44,9 @@ final class AppDetailsViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppDetailsInfoCell.cellId, for: indexPath) as! AppDetailsInfoCell
+        
+        cell.configure(with: appDetails)
+        
         return cell
     }
     
@@ -72,7 +77,9 @@ final class AppDetailsViewController: UICollectionViewController {
             switch result {
             case let .success(appDetails):
                 DispatchQueue.main.async {
+                    self.appDetails = appDetails
                     self.navigationItem.title = appDetails.trackName
+                    self.collectionView.reloadData()
                 }
                 
             case let .failure(error):
