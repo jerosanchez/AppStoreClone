@@ -44,7 +44,9 @@ class AppsPageViewController: UICollectionViewController {
     }
     
     private func handleResultTapped(_ result: AppsGroupItem) {
-        print(result.name)
+        let vc = AppDetailsViewController()
+        vc.navigationItem.title = result.name
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

@@ -9,13 +9,13 @@ import UIKit
 
 class AppsGroupViewController: HSnappingCollectionViewController {
     
-    var onResultTapped: (AppsGroupItem) -> Void = { _ in }
-    
     var loadResults = [AppsGroupItem]() {
         didSet {
             collectionView.reloadData()
         }
     }
+    
+    var onResultTapped: (AppsGroupItem) -> Void = { _ in }
     
     override func viewDidLoad() {
         super.viewDidLoad()
