@@ -9,6 +9,8 @@ import UIKit
 
 class AppsGroupViewController: HSnappingCollectionViewController {
     
+    var onResultTapped: (AppsGroupItem) -> Void = { _ in }
+    
     var loadResults = [AppsGroupItem]() {
         didSet {
             collectionView.reloadData()
@@ -29,6 +31,11 @@ class AppsGroupViewController: HSnappingCollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsGroupInfoCell.cellId, for: indexPath) as! AppsGroupInfoCell
         cell.configure(with: loadResults[indexPath.item])
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let result = loadResults[indexPath.item]
+        onResultTapped(result)
     }
     
     // MARK: - Helpers

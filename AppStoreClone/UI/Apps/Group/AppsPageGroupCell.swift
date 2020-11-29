@@ -31,8 +31,9 @@ class AppsPageGroupsCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with model: AppsGroup) {
+    func configure(with model: AppsGroup, onResultTapped: @escaping (AppsGroupItem) -> Void) {
         titleLabel.text = model.title
         horizontalController.loadResults = model.results
+        horizontalController.onResultTapped = onResultTapped
     }
 }

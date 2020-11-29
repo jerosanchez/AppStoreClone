@@ -39,8 +39,12 @@ class AppsPageViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppsPageGroupsCell.cellId, for: indexPath) as! AppsPageGroupsCell
-        cell.configure(with: groupLoadResults[indexPath.item])
+        cell.configure(with: groupLoadResults[indexPath.item], onResultTapped: handleResultTapped)
         return cell
+    }
+    
+    private func handleResultTapped(_ result: AppsGroupItem) {
+        print(result.name)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
