@@ -44,8 +44,8 @@ class AppsPageViewController: UICollectionViewController {
     }
     
     private func handleResultTapped(_ result: AppsGroupItem) {
-        let vc = AppDetailsViewController(appId: result.id)
-        vc.navigationItem.title = result.name
+        let vc = AppDetailsViewController()
+        vc.appId = result.id
         navigationController?.pushViewController(vc, animated: true)
     }
     
