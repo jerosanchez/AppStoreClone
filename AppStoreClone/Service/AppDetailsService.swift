@@ -29,6 +29,6 @@ final class AppDetailsService {
 }
 
 private struct Root: Decodable {
-    let title: String
+    let resultCount: Int
     let results: [AppDetails]
 }
