@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppsHeaderViewController: BaseCollectionViewController {
+class AppsHeaderViewController: HSnappingCollectionViewController {
     
     var headerItems = [AppsHeaderItem]() {
         didSet {
@@ -36,10 +36,6 @@ class AppsHeaderViewController: BaseCollectionViewController {
     private func setup() {
         collectionView.backgroundColor = .white
 
-        if let layout = collectionViewLayout as? UICollectionViewFlowLayout{
-            layout.scrollDirection = .horizontal
-        }
-        
         registerCells()
     }
 

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA612E07257399890068D3D0 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA612E06257399890068D3D0 /* BaseCollectionViewController.swift */; };
+		CA612E07257399890068D3D0 /* HSnappingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA612E06257399890068D3D0 /* HSnappingCollectionViewController.swift */; };
 		CA6E75032572518A00EE0443 /* AppsGroupInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E75022572518A00EE0443 /* AppsGroupInfoCell.swift */; };
 		CA6E7506257257A300EE0443 /* UIButton+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E7505257257A300EE0443 /* UIButton+Helpers.swift */; };
 		CA6E7509257257B700EE0443 /* UIImageView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E7508257257B700EE0443 /* UIImageView+Helpers.swift */; };
@@ -37,7 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CA612E06257399890068D3D0 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
+		CA612E06257399890068D3D0 /* HSnappingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSnappingCollectionViewController.swift; sourceTree = "<group>"; };
 		CA6E75022572518A00EE0443 /* AppsGroupInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupInfoCell.swift; sourceTree = "<group>"; };
 		CA6E7505257257A300EE0443 /* UIButton+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Helpers.swift"; sourceTree = "<group>"; };
 		CA6E7508257257B700EE0443 /* UIImageView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helpers.swift"; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 				CAFABF802571828D0076A26C /* UILabel+Helpers.swift */,
 				CA6E7505257257A300EE0443 /* UIButton+Helpers.swift */,
 				CA6E7508257257B700EE0443 /* UIImageView+Helpers.swift */,
-				CA612E06257399890068D3D0 /* BaseCollectionViewController.swift */,
+				CA612E06257399890068D3D0 /* HSnappingCollectionViewController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 				CAFABF812571828D0076A26C /* UILabel+Helpers.swift in Sources */,
 				CA9B4E8F2572CBAF009644B9 /* HTTPClient.swift in Sources */,
 				CAD00B682572649400B76EC4 /* AppsHeaderInfoCell.swift in Sources */,
-				CA612E07257399890068D3D0 /* BaseCollectionViewController.swift in Sources */,
+				CA612E07257399890068D3D0 /* HSnappingCollectionViewController.swift in Sources */,
 				CA6E7506257257A300EE0443 /* UIButton+Helpers.swift in Sources */,
 				CADF72BD257105A700FD74C4 /* TodayViewController.swift in Sources */,
 				CABD825925713073004D8396 /* SearchResult.swift in Sources */,
