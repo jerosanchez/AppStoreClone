@@ -39,15 +39,20 @@ final class AppDetailsViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppDetailsInfoCell.cellId, for: indexPath) as! AppDetailsInfoCell
         
-        cell.configure(with: appDetails)
-        
-        return cell
+        if indexPath.item == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppDetailsInfoCell.cellId, for: indexPath) as! AppDetailsInfoCell
+            cell.configure(with: appDetails)
+            return cell
+            
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppDetailsScreenshotsCell.cellId, for: indexPath) as! AppDetailsScreenshotsCell
+            return cell
+        }
     }
     
     // MARK: - Helpers
@@ -64,6 +69,7 @@ final class AppDetailsViewController: UICollectionViewController {
     
     private func registerCells() {
         collectionView.register(AppDetailsInfoCell.self, forCellWithReuseIdentifier: AppDetailsInfoCell.cellId)
+        collectionView.register(AppDetailsScreenshotsCell.self, forCellWithReuseIdentifier: AppDetailsScreenshotsCell.cellId)
     }
 
     private func fetchData(for appId: String) {
@@ -91,7 +97,12 @@ final class AppDetailsViewController: UICollectionViewController {
 
 extension AppDetailsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width, height: requiredHeight())
+        if indexPath.item == 0 {
+            return .init(width: view.frame.width, height: requiredHeight())
+            
+        } else {
+            return .init(width: view.frame.width, height: 500)
+        }
     }
     
     private func requiredHeight() -> CGFloat {

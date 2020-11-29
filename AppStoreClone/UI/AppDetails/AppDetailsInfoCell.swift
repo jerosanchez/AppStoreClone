@@ -34,12 +34,12 @@ final class AppDetailsInfoCell: UICollectionViewCell {
     
     let whatsNewLabel = UILabel(text: "What's new", font: .systemFont(ofSize: 20, weight: .bold))
     
-    let releaseNotes = UILabel(text: "Release notes", font: .systemFont(ofSize: 16, weight: .regular), numberOfLines: 0)
+    let releaseNotes = UILabel(text: "Release notes", font: .systemFont(ofSize: 18, weight: .regular), numberOfLines: 0)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .lightGray
+        backgroundColor = .white
         
         setupLayout()
     }

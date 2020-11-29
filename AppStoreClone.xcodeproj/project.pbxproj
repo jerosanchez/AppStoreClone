@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA1E73D625740FFF00B9A221 /* AppDetailsScreenshotsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1E73D525740FFF00B9A221 /* AppDetailsScreenshotsCell.swift */; };
 		CA612E07257399890068D3D0 /* HSnappingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA612E06257399890068D3D0 /* HSnappingCollectionViewController.swift */; };
 		CA6E75032572518A00EE0443 /* AppsGroupInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E75022572518A00EE0443 /* AppsGroupInfoCell.swift */; };
 		CA6E7506257257A300EE0443 /* UIButton+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E7505257257A300EE0443 /* UIButton+Helpers.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA1E73D525740FFF00B9A221 /* AppDetailsScreenshotsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsScreenshotsCell.swift; sourceTree = "<group>"; };
 		CA612E06257399890068D3D0 /* HSnappingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSnappingCollectionViewController.swift; sourceTree = "<group>"; };
 		CA6E75022572518A00EE0443 /* AppsGroupInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupInfoCell.swift; sourceTree = "<group>"; };
 		CA6E7505257257A300EE0443 /* UIButton+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Helpers.swift"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			children = (
 				CA9B928F2573AB170047018E /* AppDetailsViewController.swift */,
 				CA9B929A2573FA950047018E /* AppDetailsInfoCell.swift */,
+				CA1E73D525740FFF00B9A221 /* AppDetailsScreenshotsCell.swift */,
 			);
 			path = AppDetails;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				CAFABF812571828D0076A26C /* UILabel+Helpers.swift in Sources */,
 				CA9B929B2573FA950047018E /* AppDetailsInfoCell.swift in Sources */,
 				CA9B4E8F2572CBAF009644B9 /* HTTPClient.swift in Sources */,
+				CA1E73D625740FFF00B9A221 /* AppDetailsScreenshotsCell.swift in Sources */,
 				CAD00B682572649400B76EC4 /* AppsHeaderInfoCell.swift in Sources */,
 				CA612E07257399890068D3D0 /* HSnappingCollectionViewController.swift in Sources */,
 				CA6E7506257257A300EE0443 /* UIButton+Helpers.swift in Sources */,
