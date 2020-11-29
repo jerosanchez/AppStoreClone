@@ -7,16 +7,12 @@
 
 import UIKit
 
-class AppsHeaderViewController: UICollectionViewController {
+class AppsHeaderViewController: BaseCollectionViewController {
     
     var headerItems = [AppsHeaderItem]() {
         didSet {
             collectionView.reloadData()
         }
-    }
-    
-    convenience init() {
-        self.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
     
     override func viewDidLoad() {

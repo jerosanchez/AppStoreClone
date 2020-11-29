@@ -7,16 +7,12 @@
 
 import UIKit
 
-class AppsGroupViewController: UICollectionViewController {
+class AppsGroupViewController: BaseCollectionViewController {
     
     var loadResults = [AppsGroupItem]() {
         didSet {
             collectionView.reloadData()
         }
-    }
-    
-    convenience init() {
-        self.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
     
     override func viewDidLoad() {
