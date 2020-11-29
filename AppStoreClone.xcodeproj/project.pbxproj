@@ -16,6 +16,8 @@
 		CA9B4E822572BB3A009644B9 /* AppsHeaderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B4E812572BB3A009644B9 /* AppsHeaderItem.swift */; };
 		CA9B4E8F2572CBAF009644B9 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B4E8E2572CBAF009644B9 /* HTTPClient.swift */; };
 		CA9B92902573AB170047018E /* AppDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B928F2573AB170047018E /* AppDetailsViewController.swift */; };
+		CA9B92932573F4920047018E /* AppDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B92922573F4920047018E /* AppDetails.swift */; };
+		CA9B92962573F55C0047018E /* AppDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B92952573F55C0047018E /* AppDetailsService.swift */; };
 		CABD825925713073004D8396 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABD825825713073004D8396 /* SearchResult.swift */; };
 		CABD825C25713534004D8396 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABD825B25713534004D8396 /* SearchService.swift */; };
 		CABD826125714BBA004D8396 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = CABD826025714BBA004D8396 /* SDWebImage */; };
@@ -48,6 +50,8 @@
 		CA9B4E8E2572CBAF009644B9 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		CA9B4E922572D2C5009644B9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CA9B928F2573AB170047018E /* AppDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsViewController.swift; sourceTree = "<group>"; };
+		CA9B92922573F4920047018E /* AppDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetails.swift; sourceTree = "<group>"; };
+		CA9B92952573F55C0047018E /* AppDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsService.swift; sourceTree = "<group>"; };
 		CABD825825713073004D8396 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		CABD825B25713534004D8396 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		CAD00B63257261F500B76EC4 /* AppsHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 				CABD825B25713534004D8396 /* SearchService.swift */,
 				CAD00B6A25726E6C00B76EC4 /* AppsGroupService.swift */,
 				CA9B4E7E2572BA50009644B9 /* AppsHeaderService.swift */,
+				CA9B92952573F55C0047018E /* AppDetailsService.swift */,
 				CA9B4E8E2572CBAF009644B9 /* HTTPClient.swift */,
 			);
 			path = Service;
@@ -119,6 +124,7 @@
 			children = (
 				CAD00B6E2572701500B76EC4 /* AppsGroup.swift */,
 				CA9B4E812572BB3A009644B9 /* AppsHeaderItem.swift */,
+				CA9B92922573F4920047018E /* AppDetails.swift */,
 				CABD825825713073004D8396 /* SearchResult.swift */,
 			);
 			path = Model;
@@ -310,6 +316,7 @@
 				CAD00B682572649400B76EC4 /* AppsHeaderInfoCell.swift in Sources */,
 				CA612E07257399890068D3D0 /* HSnappingCollectionViewController.swift in Sources */,
 				CA6E7506257257A300EE0443 /* UIButton+Helpers.swift in Sources */,
+				CA9B92962573F55C0047018E /* AppDetailsService.swift in Sources */,
 				CADF72BD257105A700FD74C4 /* TodayViewController.swift in Sources */,
 				CABD825925713073004D8396 /* SearchResult.swift in Sources */,
 				CA9B4E822572BB3A009644B9 /* AppsHeaderItem.swift in Sources */,
@@ -324,6 +331,7 @@
 				CAD00B64257261F500B76EC4 /* AppsHeaderViewController.swift in Sources */,
 				CADF72C3257107C000FD74C4 /* SearchPageResultCell.swift in Sources */,
 				CA6E750D25725C5300EE0443 /* AppsPageHeader.swift in Sources */,
+				CA9B92932573F4920047018E /* AppDetails.swift in Sources */,
 				CABD825C25713534004D8396 /* SearchService.swift in Sources */,
 				CADF72C9257117D300FD74C4 /* VerticalStackView.swift in Sources */,
 				CADF72C625710FEA00FD74C4 /* UIView+LayoutHelpers.swift in Sources */,
