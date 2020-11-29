@@ -50,7 +50,7 @@ final class AppDetailsViewController: UICollectionViewController {
             return cell
             
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppDetailsScreenshotsCell.cellId, for: indexPath) as! AppDetailsScreenshotsCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppDetailsPreviewCell.cellId, for: indexPath) as! AppDetailsPreviewCell
             return cell
         }
     }
@@ -69,7 +69,7 @@ final class AppDetailsViewController: UICollectionViewController {
     
     private func registerCells() {
         collectionView.register(AppDetailsInfoCell.self, forCellWithReuseIdentifier: AppDetailsInfoCell.cellId)
-        collectionView.register(AppDetailsScreenshotsCell.self, forCellWithReuseIdentifier: AppDetailsScreenshotsCell.cellId)
+        collectionView.register(AppDetailsPreviewCell.self, forCellWithReuseIdentifier: AppDetailsPreviewCell.cellId)
     }
 
     private func fetchData(for appId: String) {

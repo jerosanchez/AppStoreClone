@@ -7,9 +7,12 @@
 
 import UIKit
 
-final class AppDetailsScreenshotsCell: UICollectionViewCell {
-    static var cellId: String { return AppDetailsScreenshotsCell.description() }
+final class AppDetailsPreviewCell: UICollectionViewCell {
+    
+    static var cellId: String { return AppDetailsPreviewCell.description() }
 
+    private let horizontalController = AppDetailsPreviewViewController()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -29,5 +32,7 @@ final class AppDetailsScreenshotsCell: UICollectionViewCell {
     // MARK: - Helpers
     
     private func setupLayout() {
+        addSubview(horizontalController.view)
+        horizontalController.view.fillSuperview()
     }
 }
