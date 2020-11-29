@@ -91,6 +91,17 @@ final class AppDetailsViewController: UICollectionViewController {
 
 extension AppDetailsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width, height: 300)
+        return .init(width: view.frame.width, height: requiredHeight())
+    }
+    
+    private func requiredHeight() -> CGFloat {
+        let arbitrarilyLargeHeight: CGFloat = 1000
+        let dummyCell = AppDetailsInfoCell(frame: .init(x: 0, y: 0, width: view.frame.width, height: arbitrarilyLargeHeight))
+        dummyCell.configure(with: appDetails)
+        dummyCell.layoutIfNeeded()
+        
+        let estimatedSize = dummyCell.systemLayoutSizeFitting(.init(width: view.frame.width, height: 0))
+
+        return estimatedSize.height
     }
 }

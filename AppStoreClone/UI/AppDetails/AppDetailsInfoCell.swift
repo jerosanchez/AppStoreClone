@@ -39,7 +39,7 @@ final class AppDetailsInfoCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .white
+        backgroundColor = .lightGray
         
         setupLayout()
     }
@@ -76,6 +76,6 @@ final class AppDetailsInfoCell: UICollectionViewCell {
         ], spacing: 16)
         
         addSubview(stackView)
-        stackView.fillSuperview(padding: .init(top: 20, left: 20, bottom: 20, right: 20))
+        stackView.fillSuperview(padding: .init(top: 20, left: 20, bottom: 0, right: 20))
     }
 }
