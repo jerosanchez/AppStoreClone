@@ -39,7 +39,7 @@ final class AppDetailsViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -49,9 +49,13 @@ final class AppDetailsViewController: UICollectionViewController {
             cell.configure(with: appDetails)
             return cell
             
-        } else {
+        } else if indexPath.item == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppDetailsPreviewCell.cellId, for: indexPath) as! AppDetailsPreviewCell
             cell.configure(with: appDetails)
+            return cell
+            
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppDetailsReviewsCell.cellId, for: indexPath) as! AppDetailsReviewsCell
             return cell
         }
     }
@@ -71,6 +75,7 @@ final class AppDetailsViewController: UICollectionViewController {
     private func registerCells() {
         collectionView.register(AppDetailsInfoCell.self, forCellWithReuseIdentifier: AppDetailsInfoCell.cellId)
         collectionView.register(AppDetailsPreviewCell.self, forCellWithReuseIdentifier: AppDetailsPreviewCell.cellId)
+        collectionView.register(AppDetailsReviewsCell.self, forCellWithReuseIdentifier: AppDetailsReviewsCell.cellId)
     }
 
     private func fetchData(for appId: String) {
@@ -99,14 +104,17 @@ final class AppDetailsViewController: UICollectionViewController {
 extension AppDetailsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.item == 0 {
-            return .init(width: view.frame.width, height: requiredHeight())
+            return .init(width: view.frame.width, height: infoCellRequiredHeight())
+            
+        } else if indexPath.item == 1 {
+            return .init(width: view.frame.width, height: 500)
             
         } else {
-            return .init(width: view.frame.width, height: 500)
+            return .init(width: view.frame.width, height: 280)
         }
     }
     
-    private func requiredHeight() -> CGFloat {
+    private func infoCellRequiredHeight() -> CGFloat {
         let arbitrarilyLargeHeight: CGFloat = 1000
         let dummyCell = AppDetailsInfoCell(frame: .init(x: 0, y: 0, width: view.frame.width, height: arbitrarilyLargeHeight))
         dummyCell.configure(with: appDetails)

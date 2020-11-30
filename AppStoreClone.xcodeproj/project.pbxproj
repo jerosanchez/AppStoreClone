@@ -41,6 +41,7 @@
 		CAFABF7E25717E5F0076A26C /* AppsPageGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFABF7D25717E5F0076A26C /* AppsPageGroupCell.swift */; };
 		CAFABF812571828D0076A26C /* UILabel+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFABF802571828D0076A26C /* UILabel+Helpers.swift */; };
 		CAFABF842571848A0076A26C /* AppsGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFABF832571848A0076A26C /* AppsGroupViewController.swift */; };
+		CAFEBC362575644400E9C232 /* AppDetailsReviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFEBC352575644400E9C232 /* AppDetailsReviewsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		CAFABF7D25717E5F0076A26C /* AppsPageGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageGroupCell.swift; sourceTree = "<group>"; };
 		CAFABF802571828D0076A26C /* UILabel+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Helpers.swift"; sourceTree = "<group>"; };
 		CAFABF832571848A0076A26C /* AppsGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupViewController.swift; sourceTree = "<group>"; };
+		CAFEBC352575644400E9C232 /* AppDetailsReviewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsReviewsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		CA9B928E2573AAFB0047018E /* AppDetails */ = {
 			isa = PBXGroup;
 			children = (
+				CAFEBC382575646F00E9C232 /* Reviews */,
 				CA1E73D82574125B00B9A221 /* Previews */,
 				CA9B928F2573AB170047018E /* AppDetailsViewController.swift */,
 				CA9B929A2573FA950047018E /* AppDetailsInfoCell.swift */,
@@ -256,6 +259,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		CAFEBC382575646F00E9C232 /* Reviews */ = {
+			isa = PBXGroup;
+			children = (
+				CAFEBC352575644400E9C232 /* AppDetailsReviewsCell.swift */,
+			);
+			path = Reviews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,6 +344,7 @@
 				CA9B4E7F2572BA50009644B9 /* AppsHeaderService.swift in Sources */,
 				CAFABF812571828D0076A26C /* UILabel+Helpers.swift in Sources */,
 				CA9B929B2573FA950047018E /* AppDetailsInfoCell.swift in Sources */,
+				CAFEBC362575644400E9C232 /* AppDetailsReviewsCell.swift in Sources */,
 				CA9B4E8F2572CBAF009644B9 /* HTTPClient.swift in Sources */,
 				CA1E73D625740FFF00B9A221 /* AppDetailsPreviewCell.swift in Sources */,
 				CAD00B682572649400B76EC4 /* AppsHeaderInfoCell.swift in Sources */,
