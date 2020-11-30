@@ -103,15 +103,13 @@ final class AppDetailsViewController: UICollectionViewController {
 
 extension AppDetailsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.item == 0 {
-            return .init(width: view.frame.width, height: infoCellRequiredHeight())
-            
-        } else if indexPath.item == 1 {
-            return .init(width: view.frame.width, height: 500)
-            
-        } else {
-            return .init(width: view.frame.width, height: 280)
-        }
+        var height: CGFloat = 0
+        
+        if indexPath.item == 0 { height = infoCellRequiredHeight() }
+        else if indexPath.item == 1 { height = 500 }
+        else { height = 280 }
+        
+        return .init(width: view.frame.width, height: height)
     }
     
     private func infoCellRequiredHeight() -> CGFloat {
