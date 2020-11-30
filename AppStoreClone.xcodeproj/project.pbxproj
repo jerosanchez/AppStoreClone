@@ -42,6 +42,7 @@
 		CAFABF812571828D0076A26C /* UILabel+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFABF802571828D0076A26C /* UILabel+Helpers.swift */; };
 		CAFABF842571848A0076A26C /* AppsGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFABF832571848A0076A26C /* AppsGroupViewController.swift */; };
 		CAFEBC362575644400E9C232 /* AppDetailsReviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFEBC352575644400E9C232 /* AppDetailsReviewsCell.swift */; };
+		CAFEBC3B2575679A00E9C232 /* AppDetailsReviewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFEBC3A2575679A00E9C232 /* AppDetailsReviewsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		CAFABF802571828D0076A26C /* UILabel+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Helpers.swift"; sourceTree = "<group>"; };
 		CAFABF832571848A0076A26C /* AppsGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupViewController.swift; sourceTree = "<group>"; };
 		CAFEBC352575644400E9C232 /* AppDetailsReviewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsReviewsCell.swift; sourceTree = "<group>"; };
+		CAFEBC3A2575679A00E9C232 /* AppDetailsReviewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsReviewsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				CAFEBC352575644400E9C232 /* AppDetailsReviewsCell.swift */,
+				CAFEBC3A2575679A00E9C232 /* AppDetailsReviewsController.swift */,
 			);
 			path = Reviews;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAFEBC3B2575679A00E9C232 /* AppDetailsReviewsController.swift in Sources */,
 				CA9B4E7F2572BA50009644B9 /* AppsHeaderService.swift in Sources */,
 				CAFABF812571828D0076A26C /* UILabel+Helpers.swift in Sources */,
 				CA9B929B2573FA950047018E /* AppDetailsInfoCell.swift in Sources */,
