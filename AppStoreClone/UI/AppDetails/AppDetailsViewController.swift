@@ -17,9 +17,11 @@ final class AppDetailsViewController: UICollectionViewController {
     }
     
     private var appDetails: AppDetails?
+    private var appReviews = [AppReview]()
     
     private let appDetailsService = AppDetailsService()
- 
+    private let appReviewsService = AppReviewsService()
+
     private let spinnerView: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
         spinner.color = .black
@@ -56,6 +58,7 @@ final class AppDetailsViewController: UICollectionViewController {
             
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppDetailsReviewsCell.cellId, for: indexPath) as! AppDetailsReviewsCell
+            cell.configure(with: appReviews)
             return cell
         }
     }
@@ -91,6 +94,25 @@ final class AppDetailsViewController: UICollectionViewController {
                 DispatchQueue.main.async {
                     self.appDetails = appDetails
                     self.navigationItem.title = appDetails.trackName
+                    self.collectionView.reloadData()
+                }
+                
+            case let .failure(error):
+                print("Load failed: \(error)")
+            }
+        }
+        
+        appReviewsService.load(appId: appId) { [weak self] result in
+            guard let self = self else { return }
+            
+            DispatchQueue.main.async {
+                self.spinnerView.stopAnimating()
+            }
+            
+            switch result {
+            case let .success(appReviews):
+                DispatchQueue.main.async {
+                    self.appReviews = appReviews
                     self.collectionView.reloadData()
                 }
                 

@@ -15,6 +15,7 @@
 		CA6E7506257257A300EE0443 /* UIButton+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E7505257257A300EE0443 /* UIButton+Helpers.swift */; };
 		CA6E7509257257B700EE0443 /* UIImageView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E7508257257B700EE0443 /* UIImageView+Helpers.swift */; };
 		CA6E750D25725C5300EE0443 /* AppsPageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E750C25725C5300EE0443 /* AppsPageHeader.swift */; };
+		CA7450C62576B4ED0019FFC5 /* AppReviewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7450C52576B4ED0019FFC5 /* AppReviewsService.swift */; };
 		CA9B4E7F2572BA50009644B9 /* AppsHeaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B4E7E2572BA50009644B9 /* AppsHeaderService.swift */; };
 		CA9B4E822572BB3A009644B9 /* AppsHeaderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B4E812572BB3A009644B9 /* AppsHeaderItem.swift */; };
 		CA9B4E8F2572CBAF009644B9 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B4E8E2572CBAF009644B9 /* HTTPClient.swift */; };
@@ -55,6 +56,7 @@
 		CA6E7505257257A300EE0443 /* UIButton+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Helpers.swift"; sourceTree = "<group>"; };
 		CA6E7508257257B700EE0443 /* UIImageView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helpers.swift"; sourceTree = "<group>"; };
 		CA6E750C25725C5300EE0443 /* AppsPageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageHeader.swift; sourceTree = "<group>"; };
+		CA7450C52576B4ED0019FFC5 /* AppReviewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewsService.swift; sourceTree = "<group>"; };
 		CA9B4E7E2572BA50009644B9 /* AppsHeaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderService.swift; sourceTree = "<group>"; };
 		CA9B4E812572BB3A009644B9 /* AppsHeaderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderItem.swift; sourceTree = "<group>"; };
 		CA9B4E8E2572CBAF009644B9 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				CAD00B6A25726E6C00B76EC4 /* AppsGroupService.swift */,
 				CA9B4E7E2572BA50009644B9 /* AppsHeaderService.swift */,
 				CA9B92952573F55C0047018E /* AppDetailsService.swift */,
+				CA7450C52576B4ED0019FFC5 /* AppReviewsService.swift */,
 				CABD825B25713534004D8396 /* SearchService.swift */,
 				CA9B4E8E2572CBAF009644B9 /* HTTPClient.swift */,
 			);
@@ -368,6 +371,7 @@
 				CADF72C0257105D700FD74C4 /* AppsPageViewController.swift in Sources */,
 				CADF72BA2571044000FD74C4 /* SearchPageViewController.swift in Sources */,
 				CAD00B6F2572701500B76EC4 /* AppsGroup.swift in Sources */,
+				CA7450C62576B4ED0019FFC5 /* AppReviewsService.swift in Sources */,
 				CA9B92902573AB170047018E /* AppDetailsViewController.swift in Sources */,
 				CAFEBC3E25756A0D00E9C232 /* AppDetailsReviewCardCell.swift in Sources */,
 				CADF72B72570FC6300FD74C4 /* BaseTabBarController.swift in Sources */,

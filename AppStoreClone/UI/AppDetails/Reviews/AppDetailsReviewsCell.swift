@@ -27,7 +27,9 @@ final class AppDetailsReviewsCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with appDetails: AppDetails?) { }
+    func configure(with appReviews: [AppReview]) {
+        horizontalController.appReviews = appReviews
+    }
     
     // MARK: - Helpers
     

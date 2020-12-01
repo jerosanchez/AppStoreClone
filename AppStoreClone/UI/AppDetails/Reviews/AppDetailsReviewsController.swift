@@ -9,6 +9,12 @@ import UIKit
 
 final class AppDetailsReviewsController: HSnappingCollectionViewController {
     
+    var appReviews = [AppReview]() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -16,11 +22,12 @@ final class AppDetailsReviewsController: HSnappingCollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        return appReviews.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppDetaulsReviewCardCell.cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppDetailsReviewCardCell.cellId, for: indexPath) as! AppDetailsReviewCardCell
+        cell.configure(with: appReviews[indexPath.item])
         return cell
     }
 
@@ -37,7 +44,7 @@ final class AppDetailsReviewsController: HSnappingCollectionViewController {
     }
 
     private func registerCells() {
-        collectionView.register(AppDetaulsReviewCardCell.self, forCellWithReuseIdentifier: AppDetaulsReviewCardCell.description())
+        collectionView.register(AppDetailsReviewCardCell.self, forCellWithReuseIdentifier: AppDetailsReviewCardCell.description())
     }
 }
 
