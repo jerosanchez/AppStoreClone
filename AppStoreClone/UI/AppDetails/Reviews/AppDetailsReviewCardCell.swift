@@ -40,6 +40,8 @@ final class AppDetailsReviewCardCell: UICollectionViewCell {
     func configure(with appReview: AppReview) {
         titleLabel.text = appReview.title
         bodyLabel.text = appReview.content
+        authorLabel.text = appReview.author
+        starsLabel.text = "\(appReview.rating) stars"
     }
     
     // MARK: - Helpers

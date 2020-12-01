@@ -19,7 +19,9 @@ final class AppReviewsService {
                 let reviews = root.feed.entry.map {
                     return AppReview(
                         title: $0.title.label,
-                        content: $0.content.label)
+                        content: $0.content.label,
+                        author: $0.author.name.label,
+                        rating: Int($0.rating.label) ?? 0)
                 }
                 completion(.success(reviews))
             case let .failure(error):
@@ -32,6 +34,8 @@ final class AppReviewsService {
 struct AppReview {
     let title: String
     let content: String
+    let author: String
+    let rating: Int
 }
 
 private struct Root: Decodable {
@@ -42,11 +46,24 @@ private struct Feed: Decodable {
     let entry: [Entry]
 }
 
-struct Entry: Decodable {
+private struct Entry: Decodable {
     let title: Label
     let content: Label
+    let author: Author
+    let rating: Label
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case content
+        case author
+        case rating = "im:rating"
+    }
 }
 
-struct Label: Decodable {
+private struct Author: Decodable {
+    let name: Label
+}
+
+private struct Label: Decodable {
     let label: String
 }
