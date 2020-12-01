@@ -34,6 +34,8 @@ final class AppsGroupService {
     }
 }
 
+// MARK: - Service DTO
+
 private struct Root: Decodable {
     let feed: AppsGroup
 }

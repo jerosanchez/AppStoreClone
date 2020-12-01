@@ -31,6 +31,8 @@ final class AppReviewsService {
     }
 }
 
+// MARK: - Remote DTO
+
 private struct Root: Decodable {
     let feed: Feed
 }

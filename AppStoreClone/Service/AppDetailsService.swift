@@ -28,6 +28,8 @@ final class AppDetailsService {
     }
 }
 
+// MARK: - Service DTO
+
 private struct Root: Decodable {
     let resultCount: Int
     let results: [AppDetails]
