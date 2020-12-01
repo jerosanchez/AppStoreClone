@@ -11,7 +11,11 @@ final class AppDetailsReviewCardCell: UICollectionViewCell {
     
     static var cellId: String { return AppDetailsReviewCardCell.description() }
 
-    private let titleLabel = UILabel(text: "Review title", font: .systemFont(ofSize: 16, weight: .bold))
+    private let titleLabel: UILabel = {
+        let label = UILabel(text: "Review title", font: .systemFont(ofSize: 16, weight: .bold))
+        label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        return label
+    }()
     
     private let authorLabel: UILabel = {
         let label = UILabel(text: "Author", font: .systemFont(ofSize: 16, weight: .regular))
