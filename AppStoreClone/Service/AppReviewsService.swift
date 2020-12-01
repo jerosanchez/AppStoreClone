@@ -31,13 +31,6 @@ final class AppReviewsService {
     }
 }
 
-struct AppReview {
-    let title: String
-    let content: String
-    let author: String
-    let rating: Int
-}
-
 private struct Root: Decodable {
     let feed: Feed
 }

@@ -16,6 +16,7 @@
 		CA6E7509257257B700EE0443 /* UIImageView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E7508257257B700EE0443 /* UIImageView+Helpers.swift */; };
 		CA6E750D25725C5300EE0443 /* AppsPageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E750C25725C5300EE0443 /* AppsPageHeader.swift */; };
 		CA7450C62576B4ED0019FFC5 /* AppReviewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7450C52576B4ED0019FFC5 /* AppReviewsService.swift */; };
+		CA7450C92576BD5F0019FFC5 /* AppReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7450C82576BD5F0019FFC5 /* AppReview.swift */; };
 		CA9B4E7F2572BA50009644B9 /* AppsHeaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B4E7E2572BA50009644B9 /* AppsHeaderService.swift */; };
 		CA9B4E822572BB3A009644B9 /* AppsHeaderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B4E812572BB3A009644B9 /* AppsHeaderItem.swift */; };
 		CA9B4E8F2572CBAF009644B9 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B4E8E2572CBAF009644B9 /* HTTPClient.swift */; };
@@ -57,6 +58,7 @@
 		CA6E7508257257B700EE0443 /* UIImageView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helpers.swift"; sourceTree = "<group>"; };
 		CA6E750C25725C5300EE0443 /* AppsPageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsPageHeader.swift; sourceTree = "<group>"; };
 		CA7450C52576B4ED0019FFC5 /* AppReviewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewsService.swift; sourceTree = "<group>"; };
+		CA7450C82576BD5F0019FFC5 /* AppReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReview.swift; sourceTree = "<group>"; };
 		CA9B4E7E2572BA50009644B9 /* AppsHeaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderService.swift; sourceTree = "<group>"; };
 		CA9B4E812572BB3A009644B9 /* AppsHeaderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderItem.swift; sourceTree = "<group>"; };
 		CA9B4E8E2572CBAF009644B9 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				CAD00B6E2572701500B76EC4 /* AppsGroup.swift */,
 				CA9B4E812572BB3A009644B9 /* AppsHeaderItem.swift */,
 				CA9B92922573F4920047018E /* AppDetails.swift */,
+				CA7450C82576BD5F0019FFC5 /* AppReview.swift */,
 				CABD825825713073004D8396 /* SearchResult.swift */,
 			);
 			path = Model;
@@ -355,6 +358,7 @@
 				CAFABF812571828D0076A26C /* UILabel+Helpers.swift in Sources */,
 				CA9B929B2573FA950047018E /* AppDetailsInfoCell.swift in Sources */,
 				CAFEBC362575644400E9C232 /* AppDetailsReviewsCell.swift in Sources */,
+				CA7450C92576BD5F0019FFC5 /* AppReview.swift in Sources */,
 				CA9B4E8F2572CBAF009644B9 /* HTTPClient.swift in Sources */,
 				CA1E73D625740FFF00B9A221 /* AppDetailsPreviewCell.swift in Sources */,
 				CAD00B682572649400B76EC4 /* AppsHeaderInfoCell.swift in Sources */,
