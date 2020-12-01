@@ -12,20 +12,27 @@ final class AppDetailsReviewCardCell: UICollectionViewCell {
     static var cellId: String { return AppDetailsReviewCardCell.description() }
 
     private let titleLabel: UILabel = {
-        let label = UILabel(text: "Review title", font: .systemFont(ofSize: 16, weight: .bold))
+        let label = UILabel(text: "", font: .systemFont(ofSize: 16, weight: .bold))
         label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         return label
     }()
     
     private let authorLabel: UILabel = {
-        let label = UILabel(text: "Author", font: .systemFont(ofSize: 16, weight: .regular))
+        let label = UILabel(text: "", font: .systemFont(ofSize: 16, weight: .regular))
         label.textColor = .lightGray
         return label
     }()
     
-    private let starsStackView = UIStackView()
+    private lazy var starsStackView: UIStackView = {
+        let stackView = UIStackView()
+        (1...5).forEach { _ in
+            stackView.addArrangedSubview(makeStarImageView())
+        }
+        stackView.addArrangedSubview(UIView())
+        return stackView
+    }()
     
-    private let bodyLabel = UILabel(text: "Review body\nReview body\nReview body", font: .systemFont(ofSize: 14, weight: .regular), numberOfLines: 0)
+    private let bodyLabel = UILabel(text: "", font: .systemFont(ofSize: 18, weight: .regular), numberOfLines: 0)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,10 +53,10 @@ final class AppDetailsReviewCardCell: UICollectionViewCell {
         bodyLabel.text = appReview.content
         authorLabel.text = appReview.author
         
-        (1...appReview.rating).forEach { _ in
-            starsStackView.addArrangedSubview(makeStarImageView())
+        let indexOfFillingView = 5
+        starsStackView.arrangedSubviews.enumerated().forEach { index, starImageView in
+            starImageView.isHidden = (index >= appReview.rating) && (index != indexOfFillingView)
         }
-        starsStackView.addArrangedSubview(UIView())
     }
     
     // MARK: - Helpers
