@@ -23,7 +23,7 @@ final class AppDetailsReviewCardCell: UICollectionViewCell {
         return label
     }()
     
-    private let starsLabel = UILabel(text: "Stars", font: .systemFont(ofSize: 14, weight: .regular))
+    private let starsStackView = UIStackView()
     
     private let bodyLabel = UILabel(text: "Review body\nReview body\nReview body", font: .systemFont(ofSize: 14, weight: .regular), numberOfLines: 0)
     
@@ -45,7 +45,11 @@ final class AppDetailsReviewCardCell: UICollectionViewCell {
         titleLabel.text = appReview.title
         bodyLabel.text = appReview.content
         authorLabel.text = appReview.author
-        starsLabel.text = "\(appReview.rating) stars"
+        
+        (1...appReview.rating).forEach { _ in
+            starsStackView.addArrangedSubview(makeStarImageView())
+        }
+        starsStackView.addArrangedSubview(UIView())
     }
     
     // MARK: - Helpers
@@ -57,10 +61,17 @@ final class AppDetailsReviewCardCell: UICollectionViewCell {
         headerStackView.spacing = 8
         
         let stackView = VerticalStackView(arrangedSubviews: [
-            headerStackView, starsLabel, bodyLabel, UIView()
+            headerStackView, starsStackView, bodyLabel, UIView()
         ], spacing: 8)
         
         addSubview(stackView)
         stackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
+    }
+    
+    private func makeStarImageView() -> UIView {
+        let starImageView = UIImageView(image: UIImage(named: "star"))
+        starImageView.constraintWidth(constant: 24)
+        starImageView.constraintHeight(constant: 24)
+        return starImageView
     }
 }
