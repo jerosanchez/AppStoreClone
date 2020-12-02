@@ -49,6 +49,13 @@ final class SearchPageViewController: UICollectionViewController {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let appDetailViewController = AppDetailsViewController()
+        let appId = searchResults[indexPath.item].trackId
+        appDetailViewController.appId = String(appId)
+        navigationController?.pushViewController(appDetailViewController, animated: true)
+    }
+    
     // MARK: - Helpers
     
     private func setup() {
