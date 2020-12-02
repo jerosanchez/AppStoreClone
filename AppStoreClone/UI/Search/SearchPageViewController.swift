@@ -50,9 +50,8 @@ final class SearchPageViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let appDetailViewController = AppDetailsViewController()
-        let appId = searchResults[indexPath.item].trackId
-        appDetailViewController.appId = String(appId)
+        let trackId = searchResults[indexPath.item].trackId
+        let appDetailViewController = AppDetailsViewController(appId: String(trackId))
         navigationController?.pushViewController(appDetailViewController, animated: true)
     }
     

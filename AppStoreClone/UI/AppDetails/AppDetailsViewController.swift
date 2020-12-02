@@ -9,12 +9,7 @@ import UIKit
 
 final class AppDetailsViewController: UICollectionViewController {
     
-    var appId: String? {
-        didSet {
-            guard let appId = appId else { return }
-            fetchData(for: appId)
-        }
-    }
+    private var appId = ""
     
     private var appDetails: AppDetails?
     private var appReviews = [AppReview]()
@@ -30,14 +25,18 @@ final class AppDetailsViewController: UICollectionViewController {
         return spinner
     }()
     
-    convenience init() {
+    convenience init(appId: String) {
         self.init(collectionViewLayout: UICollectionViewFlowLayout())
+        
+        self.appId = appId
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
+        
+        fetchData(for: appId)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
