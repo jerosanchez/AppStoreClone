@@ -9,6 +9,8 @@ import UIKit
 
 class TodayViewController: UICollectionViewController {
     
+    private var startingCellFrame: CGRect?
+
     convenience init() {
         self.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -28,6 +30,12 @@ class TodayViewController: UICollectionViewController {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath), let startingFrame = cell.superview?.convert(cell.frame, to: nil) else { return }
+
+        goToFullscreen(fromFrame: startingFrame)
+    }
+    
     // MARK: - Helpers
     
     private func setup() {
@@ -35,16 +43,36 @@ class TodayViewController: UICollectionViewController {
         navigationController?.isNavigationBarHidden = true
 
         registerCells()
-        
-        setupLayout()
     }
     
     private func registerCells() {
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: TodayCell.cellId)
     }
+    
+    private func goToFullscreen(fromFrame startingFrame: CGRect) {
+        self.startingCellFrame = startingFrame
 
-    private func setupLayout() {
+        let redView = UIView()
+        redView.backgroundColor = .red
+        redView.layer.cornerRadius = 16
         
+        view.addSubview(redView)
+        redView.frame = startingCellFrame ?? .zero
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(returnFromFullscreen))
+        redView.addGestureRecognizer(tapGesture)
+        
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+            redView.frame = self.view.frame
+        }, completion: nil)
+    }
+    
+    @objc private func returnFromFullscreen(gesture: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+            gesture.view?.frame = self.startingCellFrame ?? .zero
+        }, completion: { _ in
+            gesture.view?.removeFromSuperview()
+        })
     }
 }
 
