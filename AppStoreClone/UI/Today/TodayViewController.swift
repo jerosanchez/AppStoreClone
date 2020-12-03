@@ -51,19 +51,20 @@ class TodayViewController: UICollectionViewController {
     
     private func goToFullscreen(fromFrame startingFrame: CGRect) {
         self.startingCellFrame = startingFrame
-
-        let redView = UIView()
-        redView.backgroundColor = .red
-        redView.layer.cornerRadius = 16
         
-        view.addSubview(redView)
-        redView.frame = startingCellFrame ?? .zero
+        let appFullscreenController = TodayAppFullscreenController()
+        
+        let fullscreenView = appFullscreenController.view!
+        fullscreenView.layer.cornerRadius = 16
+        
+        view.addSubview(fullscreenView)
+        fullscreenView.frame = startingCellFrame ?? .zero
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(returnFromFullscreen))
-        redView.addGestureRecognizer(tapGesture)
+        fullscreenView.addGestureRecognizer(tapGesture)
         
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
-            redView.frame = self.view.frame
+            fullscreenView.frame = self.view.frame
             
             self.tabBarController?.tabBar.frame.origin.y = self.view.frame.size.height
             
