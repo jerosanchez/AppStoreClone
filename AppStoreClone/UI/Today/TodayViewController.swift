@@ -10,6 +10,7 @@ import UIKit
 class TodayViewController: UICollectionViewController {
     
     private var startingCellFrame: CGRect?
+    private var appFullscreenController: TodayAppFullscreenController!
 
     convenience init() {
         self.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -52,7 +53,8 @@ class TodayViewController: UICollectionViewController {
     private func goToFullscreen(fromFrame startingFrame: CGRect) {
         self.startingCellFrame = startingFrame
         
-        let appFullscreenController = TodayAppFullscreenController()
+        appFullscreenController = TodayAppFullscreenController()
+        addChild(appFullscreenController)
         
         let fullscreenView = appFullscreenController.view!
         fullscreenView.layer.cornerRadius = 16
@@ -79,7 +81,10 @@ class TodayViewController: UICollectionViewController {
                 self.tabBarController?.tabBar.frame.origin.y = self.view.frame.size.height - tabBarFrame.height
             }
             
-        }, completion: { _ in
+        }, completion: { [weak self] _ in
+            guard let self = self else { return }
+            
+            self.appFullscreenController.removeFromParent()
             gesture.view?.removeFromSuperview()
         })
     }
