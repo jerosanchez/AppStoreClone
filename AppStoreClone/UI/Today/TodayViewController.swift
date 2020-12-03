@@ -64,12 +64,20 @@ class TodayViewController: UICollectionViewController {
         
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
             redView.frame = self.view.frame
+            
+            self.tabBarController?.tabBar.frame.origin.y = self.view.frame.size.height
+            
         }, completion: nil)
     }
     
     @objc private func returnFromFullscreen(gesture: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
             gesture.view?.frame = self.startingCellFrame ?? .zero
+            
+            if let tabBarFrame = self.tabBarController?.tabBar.frame {
+                self.tabBarController?.tabBar.frame.origin.y = self.view.frame.size.height - tabBarFrame.height
+            }
+            
         }, completion: { _ in
             gesture.view?.removeFromSuperview()
         })
