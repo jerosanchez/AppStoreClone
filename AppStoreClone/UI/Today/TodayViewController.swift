@@ -53,7 +53,7 @@ class TodayViewController: UICollectionViewController {
     private func goToFullscreen(fromFrame startingFrame: CGRect) {
         self.startingCellFrame = startingFrame
         
-        appFullscreenController = TodayAppFullscreenController()
+        appFullscreenController = TodayAppFullscreenController(style: .grouped)
         addChild(appFullscreenController)
         
         let fullscreenView = appFullscreenController.view!

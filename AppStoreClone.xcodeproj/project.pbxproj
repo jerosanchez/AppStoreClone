@@ -10,6 +10,7 @@
 		CA1E73D625740FFF00B9A221 /* AppDetailsPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1E73D525740FFF00B9A221 /* AppDetailsPreviewCell.swift */; };
 		CA1E73DA2574127C00B9A221 /* AppDetailsPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1E73D92574127C00B9A221 /* AppDetailsPreviewViewController.swift */; };
 		CA1E73E02574156200B9A221 /* AppDetailsScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1E73DF2574156200B9A221 /* AppDetailsScreenshotCell.swift */; };
+		CA20D3FA257962C4000C8B6C /* TodayAppFullscreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA20D3F9257962C4000C8B6C /* TodayAppFullscreenCell.swift */; };
 		CA612E07257399890068D3D0 /* HSnappingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA612E06257399890068D3D0 /* HSnappingCollectionViewController.swift */; };
 		CA6E75032572518A00EE0443 /* AppsGroupInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E75022572518A00EE0443 /* AppsGroupInfoCell.swift */; };
 		CA6E7506257257A300EE0443 /* UIButton+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E7505257257A300EE0443 /* UIButton+Helpers.swift */; };
@@ -54,6 +55,7 @@
 		CA1E73D525740FFF00B9A221 /* AppDetailsPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsPreviewCell.swift; sourceTree = "<group>"; };
 		CA1E73D92574127C00B9A221 /* AppDetailsPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsPreviewViewController.swift; sourceTree = "<group>"; };
 		CA1E73DF2574156200B9A221 /* AppDetailsScreenshotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsScreenshotCell.swift; sourceTree = "<group>"; };
+		CA20D3F9257962C4000C8B6C /* TodayAppFullscreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAppFullscreenCell.swift; sourceTree = "<group>"; };
 		CA612E06257399890068D3D0 /* HSnappingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSnappingCollectionViewController.swift; sourceTree = "<group>"; };
 		CA6E75022572518A00EE0443 /* AppsGroupInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupInfoCell.swift; sourceTree = "<group>"; };
 		CA6E7505257257A300EE0443 /* UIButton+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Helpers.swift"; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				CADF72BC257105A700FD74C4 /* TodayViewController.swift */,
 				CA95DECD2578068A009AB085 /* TodayCell.swift */,
 				CAD29E5B25795E9D00954381 /* TodayAppFullscreenController.swift */,
+				CA20D3F9257962C4000C8B6C /* TodayAppFullscreenCell.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				CAFEBC3E25756A0D00E9C232 /* AppDetailsReviewCardCell.swift in Sources */,
 				CADF72B72570FC6300FD74C4 /* BaseTabBarController.swift in Sources */,
 				CAD00B64257261F500B76EC4 /* AppsHeaderViewController.swift in Sources */,
+				CA20D3FA257962C4000C8B6C /* TodayAppFullscreenCell.swift in Sources */,
 				CADF72C3257107C000FD74C4 /* SearchPageResultCell.swift in Sources */,
 				CA6E750D25725C5300EE0443 /* AppsPageHeader.swift in Sources */,
 				CA9B92932573F4920047018E /* AppDetails.swift in Sources */,
