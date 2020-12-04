@@ -2,6 +2,7 @@
 
 A simple app to show case a professional UIKit-based app.
 
+![Today](Images/today.png)
 ![Apps](Images/apps.png)
 ![Search](Images/search.png)
 
