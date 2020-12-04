@@ -10,6 +10,12 @@ import UIKit
 class TodayViewController: UICollectionViewController {
     
     private var startingCellFrame: CGRect?
+    
+    private var topConstraint: NSLayoutConstraint?
+    private var leadingConstraint: NSLayoutConstraint?
+    private var widthConstraint: NSLayoutConstraint?
+    private var heightConstraint: NSLayoutConstraint?
+
     private var appFullscreenController: TodayAppFullscreenController!
 
     convenience init() {
@@ -58,24 +64,48 @@ class TodayViewController: UICollectionViewController {
         
         let fullscreenView = appFullscreenController.view!
         fullscreenView.layer.cornerRadius = 16
+
+        fullscreenView.translatesAutoresizingMaskIntoConstraints = false
+        topConstraint = fullscreenView.topAnchor.constraint(equalTo: view.topAnchor, constant: startingFrame.origin.y)
+        leadingConstraint = fullscreenView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: startingFrame.origin.x)
+        widthConstraint = fullscreenView.widthAnchor.constraint(equalToConstant: startingFrame.width)
+        heightConstraint = fullscreenView.heightAnchor.constraint(equalToConstant: startingFrame.height)
         
         view.addSubview(fullscreenView)
-        fullscreenView.frame = startingCellFrame ?? .zero
 
+        [topConstraint, leadingConstraint, widthConstraint, heightConstraint].forEach { $0?.isActive = true }
+        self.view.layoutIfNeeded()
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(returnFromFullscreen))
         fullscreenView.addGestureRecognizer(tapGesture)
-        
-        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
-            fullscreenView.frame = self.view.frame
+
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: { [weak self] in
+            guard let self = self else { return }
+
+            self.topConstraint?.constant = 0
+            self.leadingConstraint?.constant = 0
+            self.widthConstraint?.constant = self.view.frame.width
+            self.heightConstraint?.constant = self.view.frame.height
+            
+            self.view.layoutIfNeeded() // starts animation
             
             self.tabBarController?.tabBar.frame.origin.y = self.view.frame.size.height
-            
+
         }, completion: nil)
     }
     
     @objc private func returnFromFullscreen(gesture: UITapGestureRecognizer) {
-        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
-            gesture.view?.frame = self.startingCellFrame ?? .zero
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: { [weak self] in
+            guard let self = self, let startingCellFrame = self.startingCellFrame else { return }
+            
+            self.appFullscreenController.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            
+            self.topConstraint?.constant = startingCellFrame.origin.y
+            self.leadingConstraint?.constant = startingCellFrame.origin.x
+            self.widthConstraint?.constant = startingCellFrame.width
+            self.heightConstraint?.constant = startingCellFrame.height
+            
+            self.view.layoutIfNeeded()
             
             if let tabBarFrame = self.tabBarController?.tabBar.frame {
                 self.tabBarController?.tabBar.frame.origin.y = self.view.frame.size.height - tabBarFrame.height
