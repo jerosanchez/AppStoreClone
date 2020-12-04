@@ -17,6 +17,8 @@ class TodayViewController: UICollectionViewController {
     private var heightConstraint: NSLayoutConstraint?
 
     private var appFullscreenController: TodayAppFullscreenController!
+    
+    private lazy var items = makeFakeItems()
 
     convenience init() {
         self.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -29,18 +31,19 @@ class TodayViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return items.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TodayCell.cellId, for: indexPath) as! TodayCell
+        cell.configure(with: items[indexPath.item])
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath), let startingFrame = cell.superview?.convert(cell.frame, to: nil) else { return }
 
-        goToFullscreen(fromFrame: startingFrame)
+        goToFullscreen(with: items[indexPath.item], fromFrame: startingFrame)
     }
     
     // MARK: - Helpers
@@ -56,10 +59,10 @@ class TodayViewController: UICollectionViewController {
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: TodayCell.cellId)
     }
     
-    private func goToFullscreen(fromFrame startingFrame: CGRect) {
+    private func goToFullscreen(with item: TodayCellViewModel, fromFrame startingFrame: CGRect) {
         self.startingCellFrame = startingFrame
         
-        appFullscreenController = TodayAppFullscreenController(style: .grouped)
+        appFullscreenController = TodayAppFullscreenController(item: item)
         addChild(appFullscreenController)
         
         appFullscreenController.onDidTapCloseButton = returnFromFullscreen
@@ -134,5 +137,26 @@ extension TodayViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .init(top: 32, left: 0, bottom: 32, right: 0)
+    }
+}
+
+private extension TodayViewController {
+    
+    func makeFakeItems() -> [TodayCellViewModel] {
+        let item1 = TodayCellViewModel(
+            category: "LIFE HACK",
+            title: "Utilizing your time",
+            image: UIImage(named: "garden")!,
+            description: "All the tools and apps you need to intelligently organize your life the right way.",
+            bgColor: .white)
+        
+        let item2 = TodayCellViewModel(
+            category: "HOLIDAYS",
+            title: "Trabel on a budget",
+            image: UIImage(named: "holiday")!,
+            description: "Find out all you need to know on how to travel without packing everything!",
+            bgColor: UIColor(red: 250/255, green: 246/255, blue: 185/255, alpha: 1))
+
+        return [item1, item2]
     }
 }

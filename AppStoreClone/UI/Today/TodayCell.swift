@@ -18,18 +18,17 @@ final class TodayCell: UICollectionViewCell {
         return button
     }()
     
-    private let categoryLabel = UILabel(text: "LIFE HACK", font: .systemFont(ofSize: 20, weight: .regular))
+    private let categoryLabel = UILabel(text: "", font: .systemFont(ofSize: 20, weight: .regular))
     
-    private let titleLabel = UILabel(text: "Utilizing your time", font: .systemFont(ofSize: 26, weight: .regular))
+    private let titleLabel = UILabel(text: "", font: .systemFont(ofSize: 26, weight: .regular))
 
     private let imageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "garden"))
-        imageView.constraintWidth(constant: 200)
+        let imageView = UIImageView()
         imageView.constraintHeight(constant: 200)
         return imageView
     }()
     
-    private let descriptionLabel = UILabel(text: "All the tools and apps you need to intelligently organize your life the right way.", font: .systemFont(ofSize: 16, weight: .regular), numberOfLines: 3)
+    private let descriptionLabel = UILabel(text: "", font: .systemFont(ofSize: 16, weight: .regular), numberOfLines: 3)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,7 +44,12 @@ final class TodayCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(with model: SearchResultItem) {
+    func configure(with model: TodayCellViewModel) {
+        categoryLabel.text = model.category
+        titleLabel.text = model.title
+        imageView.image = model.image
+        descriptionLabel.text = model.description
+        backgroundColor = model.bgColor
     }
     
     func enableCloseButton(onTap handleDidTapCloseButton: Selector, target: Any?) {

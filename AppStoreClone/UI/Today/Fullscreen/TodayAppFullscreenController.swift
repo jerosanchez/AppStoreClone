@@ -11,8 +11,19 @@ final class TodayAppFullscreenController: UITableViewController {
     
     var onDidTapCloseButton: () -> Void = { }
 
+    private let item: TodayCellViewModel
     private let header = TodayCell()
 
+    init(item: TodayCellViewModel) {
+        self.item = item
+        
+        super.init(style: .grouped)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,6 +31,7 @@ final class TodayAppFullscreenController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        header.configure(with: item)
         header.enableCloseButton(onTap: #selector(handleDidTapCloseButton), target: self)
         return header
     }
