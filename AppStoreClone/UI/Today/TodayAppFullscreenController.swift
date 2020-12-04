@@ -9,6 +9,10 @@ import UIKit
 
 final class TodayAppFullscreenController: UITableViewController {
     
+    var onDidTapCloseButton: () -> Void = { }
+
+    private let header = TodayCell()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -16,8 +20,13 @@ final class TodayAppFullscreenController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = TodayCell()
+        header.enableCloseButton(onTap: #selector(handleDidTapCloseButton), target: self)
         return header
+    }
+    
+    @objc private func handleDidTapCloseButton() {
+        header.disableCloseButton()
+        onDidTapCloseButton()
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

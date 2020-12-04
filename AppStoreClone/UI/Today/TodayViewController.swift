@@ -62,6 +62,8 @@ class TodayViewController: UICollectionViewController {
         appFullscreenController = TodayAppFullscreenController(style: .grouped)
         addChild(appFullscreenController)
         
+        appFullscreenController.onDidTapCloseButton = returnFromFullscreen
+        
         let fullscreenView = appFullscreenController.view!
         fullscreenView.layer.cornerRadius = 16
 
@@ -76,9 +78,6 @@ class TodayViewController: UICollectionViewController {
         [topConstraint, leadingConstraint, widthConstraint, heightConstraint].forEach { $0?.isActive = true }
         self.view.layoutIfNeeded()
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(returnFromFullscreen))
-        fullscreenView.addGestureRecognizer(tapGesture)
-
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: { [weak self] in
             guard let self = self else { return }
 
@@ -94,7 +93,7 @@ class TodayViewController: UICollectionViewController {
         }, completion: nil)
     }
     
-    @objc private func returnFromFullscreen(gesture: UITapGestureRecognizer) {
+    private func returnFromFullscreen() {
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: { [weak self] in
             guard let self = self, let startingCellFrame = self.startingCellFrame else { return }
             
@@ -114,8 +113,8 @@ class TodayViewController: UICollectionViewController {
         }, completion: { [weak self] _ in
             guard let self = self else { return }
             
+            self.appFullscreenController.view?.removeFromSuperview()
             self.appFullscreenController.removeFromParent()
-            gesture.view?.removeFromSuperview()
         })
     }
 }
