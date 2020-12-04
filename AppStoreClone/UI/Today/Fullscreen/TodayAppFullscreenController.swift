@@ -47,6 +47,7 @@ final class TodayAppFullscreenController: UITableViewController {
     private func setup() {
         tableView.backgroundColor = .white
         tableView.separatorStyle = .none
+        tableView.allowsSelection = false
         
         registerCells()
     }

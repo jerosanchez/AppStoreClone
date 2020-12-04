@@ -178,6 +178,15 @@
 			path = AppDetails;
 			sourceTree = "<group>";
 		};
+		CACB9E58257AA7B2002E0D61 /* Fullscreen */ = {
+			isa = PBXGroup;
+			children = (
+				CAD29E5B25795E9D00954381 /* TodayAppFullscreenController.swift */,
+				CA20D3F9257962C4000C8B6C /* TodayAppFullscreenCell.swift */,
+			);
+			path = Fullscreen;
+			sourceTree = "<group>";
+		};
 		CAD3D726257260FE00EFCFA2 /* Group */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,10 +256,9 @@
 		CADF72CE257119ED00FD74C4 /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				CACB9E58257AA7B2002E0D61 /* Fullscreen */,
 				CADF72BC257105A700FD74C4 /* TodayViewController.swift */,
 				CA95DECD2578068A009AB085 /* TodayCell.swift */,
-				CAD29E5B25795E9D00954381 /* TodayAppFullscreenController.swift */,
-				CA20D3F9257962C4000C8B6C /* TodayAppFullscreenCell.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
