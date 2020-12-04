@@ -125,7 +125,7 @@ extension TodayViewController: UICollectionViewDelegateFlowLayout {
     private var lineSpacing: CGFloat { return 32 }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - 2 * leftRightPadding, height: 450)
+        return .init(width: view.frame.width - 2 * leftRightPadding, height: 400)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

@@ -17,8 +17,19 @@ final class TodayCell: UICollectionViewCell {
         button.isHidden = true
         return button
     }()
+    
+    private let categoryLabel = UILabel(text: "LIFE HACK", font: .systemFont(ofSize: 20, weight: .regular))
+    
+    private let titleLabel = UILabel(text: "Utilizing your time", font: .systemFont(ofSize: 26, weight: .regular))
 
-    private let imageView = UIImageView(image: UIImage(named: "garden"))
+    private let imageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "garden"))
+        imageView.constraintWidth(constant: 200)
+        imageView.constraintHeight(constant: 200)
+        return imageView
+    }()
+    
+    private let descriptionLabel = UILabel(text: "All the tools and apps you need to intelligently organize your life the right way.", font: .systemFont(ofSize: 16, weight: .regular), numberOfLines: 3)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,8 +60,11 @@ final class TodayCell: UICollectionViewCell {
     // MARK: - Helpers
     
     private func setupLayout() {
-        addSubview(imageView)
-        imageView.centerInSuperview(size: .init(width: 200, height: 200))
+        let stackView = VerticalStackView(arrangedSubviews: [
+            categoryLabel, titleLabel, imageView, descriptionLabel, UIView()
+        ], spacing: 8)
+        addSubview(stackView)
+        stackView.fillSuperview(padding: .init(top: 24, left: 24, bottom: 24, right: 24))
         
         addSubview(closeButton)
         closeButton.anchor(top: topAnchor, leading: nil, bottom: nil, trailing: trailingAnchor, padding: .init(top: 12, left: 0, bottom: 0, right: 12))
