@@ -36,7 +36,7 @@ final class TodayAppFullscreenCell: UITableViewCell {
     
     private func setupLayout() {
         addSubview(descriptionLabel)
-        descriptionLabel.fillSuperview(padding: .init(top: 0, left: 24, bottom: 0, right: 24))
+        descriptionLabel.fillSuperview(padding: .init(top: 24, left: 24, bottom: 0, right: 24))
     }
     
     // MARK: - Helpers

@@ -92,6 +92,10 @@ class TodayViewController: UICollectionViewController {
             self.view.layoutIfNeeded() // starts animation
             
             self.tabBarController?.tabBar.frame.origin.y = self.view.frame.size.height
+            
+            let header = self.appFullscreenController.header
+            header.topConstraint.constant = 48
+            header.layoutIfNeeded()
 
         }, completion: nil)
     }
@@ -112,6 +116,10 @@ class TodayViewController: UICollectionViewController {
             if let tabBarFrame = self.tabBarController?.tabBar.frame {
                 self.tabBarController?.tabBar.frame.origin.y = self.view.frame.size.height - tabBarFrame.height
             }
+            
+            let header = self.appFullscreenController.header
+            header.topConstraint.constant = 24
+            header.layoutIfNeeded()
             
         }, completion: { [weak self] _ in
             guard let self = self else { return }

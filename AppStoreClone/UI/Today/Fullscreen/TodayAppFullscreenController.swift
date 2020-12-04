@@ -12,7 +12,7 @@ final class TodayAppFullscreenController: UITableViewController {
     var onDidTapCloseButton: () -> Void = { }
 
     private let item: TodayCellViewModel
-    private let header = TodayCell()
+    let header = TodayCell()
 
     init(item: TodayCellViewModel) {
         self.item = item
@@ -60,6 +60,7 @@ final class TodayAppFullscreenController: UITableViewController {
         tableView.backgroundColor = .white
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
+        tableView.contentInsetAdjustmentBehavior = .never
         
         registerCells()
     }

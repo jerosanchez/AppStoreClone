@@ -31,8 +31,8 @@ final class TodayCell: UICollectionViewCell {
     private let descriptionLabel = UILabel(text: "", font: .systemFont(ofSize: 16, weight: .regular), numberOfLines: 3)
     
     override init(frame: CGRect) {
-        super.init(frame: frame)
-                
+        super.init(frame: .zero)
+
         backgroundColor = .white
         layer.cornerRadius = 16
         imageView.contentMode = .scaleAspectFit
@@ -43,7 +43,7 @@ final class TodayCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     func configure(with model: TodayCellViewModel) {
         categoryLabel.text = model.category
         titleLabel.text = model.title
@@ -63,14 +63,19 @@ final class TodayCell: UICollectionViewCell {
     
     // MARK: - Helpers
     
+    var topConstraint: NSLayoutConstraint!
+    
     private func setupLayout() {
         let stackView = VerticalStackView(arrangedSubviews: [
             categoryLabel, titleLabel, imageView, descriptionLabel, UIView()
         ], spacing: 8)
         addSubview(stackView)
-        stackView.fillSuperview(padding: .init(top: 24, left: 24, bottom: 24, right: 24))
+        
+        stackView.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 24, bottom: 24, right: 24))
+        self.topConstraint = stackView.topAnchor.constraint(equalTo: topAnchor, constant: 24)
+        self.topConstraint.isActive = true
         
         addSubview(closeButton)
-        closeButton.anchor(top: topAnchor, leading: nil, bottom: nil, trailing: trailingAnchor, padding: .init(top: 12, left: 0, bottom: 0, right: 12))
+        closeButton.anchor(top: categoryLabel.topAnchor, leading: nil, bottom: nil, trailing: trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 24))
     }
 }
